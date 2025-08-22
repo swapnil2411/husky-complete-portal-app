@@ -3,6 +3,7 @@ import Lock from '../icons/Lock';
 import User from '../icons/User';
 import Help from '../icons/Help';
 import Logout from '../icons/Logout';
+import { Link } from 'react-router-dom';
 
 const Profileview = () => {
   return (
@@ -14,30 +15,38 @@ const Profileview = () => {
                   <p>VP of Operations</p>
                 </div>
               </div>
-              <ul>
+               <ul>
                 <li>
-                  <span className="icon">
+                 <Link>
+                   <span className="icon">
                     <Lock />
                   </span>
                   <span className="txt">Access admin area</span>
+                 </Link>
                 </li>
                 <li>
+                  <Link>
                   <span className="icon">
                     <User />
                   </span>
                   <span className="txt">Account</span>
+                  </Link>
                 </li>
                 <li>
-                  <span className="icon">
+                  <Link>
+                    <span className="icon">
                     <Help />
                   </span>
                   <span className="txt">Help</span>
+                  </Link>
                 </li>
                 <li>
-                  <span className="icon">
+                  <Link>
+                    <span className="icon">
                     <Logout />
                   </span>
                   <span className="txt">Logout</span>
+                  </Link>
                 </li>
               </ul>
     </div>

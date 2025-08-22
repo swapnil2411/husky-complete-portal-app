@@ -6,15 +6,13 @@ import useFetch from '../utils/hooks/useFetch';
 
 const Mainlayout = () => {
   const baseUrl = window.location.origin;
-  const { data: companies, loading, error } = useFetch(`${baseUrl}/db.json`);
-  console.log(companies?.companies)
-
+  const { data, loading, error } = useFetch(`${baseUrl}/db.json`);
+  const companies = data?.companies || [];
   const [selectedCompany, setSelectedCompany] = useState(null);
-
   return (
     <>
       <Header
-        companies={companies?.companies}
+        companies={companies}
         loading={loading}
         error={error}
         selectedCompany={selectedCompany}
@@ -23,7 +21,7 @@ const Mainlayout = () => {
       <div className='app_wrapper'>
         <Sidebar />
         <main className='app_content'>
-          <Outlet context={{ selectedCompany, companies }} /> 
+          <Outlet context={{ selectedCompany, setSelectedCompany, companies }} />
         </main>
       </div>
     </>

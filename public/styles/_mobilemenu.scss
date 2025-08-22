@@ -36,6 +36,7 @@
         align-self: stretch;
         position: relative;
         border-bottom: 1px solid #cbd0da;
+        cursor: pointer;
 
         .item_icon {
           @include flexProperty(flex, center, center);
@@ -115,7 +116,8 @@
           }
 
           ul li {
-            @include flexProperty(flex, flex-start, center);
+            a{
+              @include flexProperty(flex, flex-start, center);
             padding: $spacing-padding-component-m $spacing-padding-component-s;
             align-items: center;
             gap: $spacing-gap-component-s;
@@ -136,10 +138,14 @@
               line-height: 22px;
             }
 
-            &:nth-child(1),
+            
+            }
+            
+&:nth-child(1),
             &:nth-child(3) {
               border-bottom: 1px solid #cbd0da;
             }
+            
           }
         }
 
@@ -174,6 +180,7 @@
               font-style: normal;
               font-weight: 400;
               line-height: normal;
+              cursor: pointer;
               letter-spacing: 0.32px;
             }
           }
@@ -212,6 +219,7 @@
                 text-decoration-skip-ink: auto;
                 text-decoration-thickness: auto;
                 text-underline-offset: auto;
+                cursor: pointer;
               }
             }
 
@@ -295,6 +303,7 @@
                 .notification_link {
                   @include flexProperty(flex, center, center);
                   gap: $spacing-gap-component-xs;
+                  cursor: pointer;
                   .txt {
                     color: $fill-element-subdued;
                     font-family: $font-family-support;
@@ -357,6 +366,7 @@
                 text-decoration-skip-ink: auto;
                 text-decoration-thickness: auto;
                 text-underline-offset: auto;
+                cursor: pointer;
               }
             }
 
@@ -461,6 +471,7 @@
           gap: $spacing-gap-component-compact;
           left: 0;
           top: 0;
+          cursor: pointer;
         }
       }
     }
@@ -494,6 +505,7 @@
       .dropdown_header {
         position: relative;
         width: 100%;
+        cursor: pointer;
 
         .title {
           color: var(--fill-element-default, #212427);
@@ -540,12 +552,15 @@
           gap: 14px;
           align-self: stretch;
           li {
-            color: $fill-element-default;
+            
+            a{
+              color: $fill-element-default;
             font-family: $font-family-support;
             font-size: $size-text-title-medium;
             font-style: normal;
             font-weight: 400;
             line-height: 27px;
+            }
           }
         }
       }

@@ -1,35 +1,34 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useOutletContext } from 'react-router-dom';
 import Pageheader from '../components/shared/Pageheader';
 import Companyprofileoverviewcard from '../components/shared/Companyprofileoverviewcard';
 import Plantcard from '../components/shared/Plantcard';
 
-
 const Companyoverview = () => {
-  const { selectedCompany } = useOutletContext();
-  // console.log(selectedCompany)
+  const { companies, selectedCompany, setSelectedCompany } = useOutletContext();
+  console.log(companies)
+
+  // 👇 auto-select first company when none is selected
+  useEffect(() => {
+  if (!selectedCompany && companies.length > 0) {
+    setSelectedCompany(companies[0]);
+  }
+}, [companies, selectedCompany, setSelectedCompany]);
 
   if (!selectedCompany) {
-    return (
-      <>
-        <div>Please select a company</div>
-      </>
-    );
+    return <div>Please select a company</div>;
   }
-
 
   return (
     <>
       <Pageheader data={selectedCompany} />
-      {
-        selectedCompany?.plants.length === 0 ?
-        <Companyprofileoverviewcard />  :
+      {selectedCompany?.plants.length === 0 ? (
+        <Companyprofileoverviewcard />
+      ) : (
         <div className='locations_wrapper'>
-          <Plantcard data={selectedCompany}/>
+          <Plantcard data={selectedCompany} />
         </div>
-      }
-      
-      
+      )}
     </>
   );
 };

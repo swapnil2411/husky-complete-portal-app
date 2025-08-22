@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Mainlayout from './layout/Mainlayout';
 import Companyoverview from './pages/Companyoverview';

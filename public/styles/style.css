@@ -803,6 +803,7 @@ aside .side_navigation_top nav ul li a .nav_txt, aside .side_navigation_bottom n
   align-self: stretch;
   position: relative;
   border-bottom: 1px solid #cbd0da;
+  cursor: pointer;
 }
 .mobile_menu_top_item .dropdown_header .item_icon {
   display: flex;
@@ -880,7 +881,7 @@ aside .side_navigation_top nav ul li a .nav_txt, aside .side_navigation_bottom n
   font-weight: 400;
   line-height: 22px;
 }
-.mobile_menu_top_item .submenu.profile ul li {
+.mobile_menu_top_item .submenu.profile ul li a {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -889,14 +890,14 @@ aside .side_navigation_top nav ul li a .nav_txt, aside .side_navigation_bottom n
   gap: 8px;
   align-self: stretch;
 }
-.mobile_menu_top_item .submenu.profile ul li .icon {
+.mobile_menu_top_item .submenu.profile ul li a .icon {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 24px;
   height: 24px;
 }
-.mobile_menu_top_item .submenu.profile ul li .txt {
+.mobile_menu_top_item .submenu.profile ul li a .txt {
   color: #212427;
   font-family: "Roboto";
   font-size: 16px;
@@ -940,6 +941,7 @@ aside .side_navigation_top nav ul li a .nav_txt, aside .side_navigation_bottom n
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  cursor: pointer;
   letter-spacing: 0.32px;
 }
 .mobile_menu_top_item .submenu.notifications .content {
@@ -980,6 +982,7 @@ aside .side_navigation_top nav ul li a .nav_txt, aside .side_navigation_bottom n
           text-decoration-skip-ink: auto;
   text-decoration-thickness: auto;
   text-underline-offset: auto;
+  cursor: pointer;
 }
 .mobile_menu_top_item .submenu.notifications .content ul {
   max-height: 380px;
@@ -1063,6 +1066,7 @@ aside .side_navigation_top nav ul li a .nav_txt, aside .side_navigation_bottom n
   justify-content: center;
   align-items: center;
   gap: 4px;
+  cursor: pointer;
 }
 .mobile_menu_top_item .submenu.notifications .content ul li .notification_link .txt {
   color: #53565A;
@@ -1126,6 +1130,7 @@ aside .side_navigation_top nav ul li a .nav_txt, aside .side_navigation_bottom n
           text-decoration-skip-ink: auto;
   text-decoration-thickness: auto;
   text-underline-offset: auto;
+  cursor: pointer;
 }
 .mobile_menu_top_item .submenu.calendar .content ul {
   width: 100%;
@@ -1234,6 +1239,7 @@ aside .side_navigation_top nav ul li a .nav_txt, aside .side_navigation_bottom n
   gap: 8px;
   left: 0;
   top: 0;
+  cursor: pointer;
 }
 .mobile_menu_top .submenu_overlay {
   position: absolute;
@@ -1266,6 +1272,7 @@ aside .side_navigation_top nav ul li a .nav_txt, aside .side_navigation_bottom n
 .mobile_menu_bottom_item .dropdown_header {
   position: relative;
   width: 100%;
+  cursor: pointer;
 }
 .mobile_menu_bottom_item .dropdown_header .title {
   color: var(--fill-element-default, #212427);
@@ -1313,7 +1320,7 @@ aside .side_navigation_top nav ul li a .nav_txt, aside .side_navigation_bottom n
   gap: 14px;
   align-self: stretch;
 }
-.mobile_menu_bottom_item .bottom_options ul li {
+.mobile_menu_bottom_item .bottom_options ul li a {
   color: #212427;
   font-family: "Roboto";
   font-size: 18px;
@@ -1590,6 +1597,7 @@ aside .side_navigation_top nav ul li a .nav_txt, aside .side_navigation_bottom n
   background: none;
   border: none;
   outline: none;
+  cursor: pointer;
 }
 .notifications_container .notifications_list {
   display: flex;
@@ -1673,6 +1681,7 @@ aside .side_navigation_top nav ul li a .nav_txt, aside .side_navigation_bottom n
   background: transparent;
   border: none;
   outline: none;
+  cursor: pointer;
 }
 .notifications_container .notifications_list .notification_item .details_btn .txt {
   display: flex;
@@ -1754,7 +1763,7 @@ aside .side_navigation_top nav ul li a .nav_txt, aside .side_navigation_bottom n
 .profile_container ul {
   width: 100%;
 }
-.profile_container ul li {
+.profile_container ul li a {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -1763,14 +1772,14 @@ aside .side_navigation_top nav ul li a .nav_txt, aside .side_navigation_bottom n
   gap: 8px;
   align-self: stretch;
 }
-.profile_container ul li .icon {
+.profile_container ul li a .icon {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 24px;
   height: 24px;
 }
-.profile_container ul li .txt {
+.profile_container ul li a .txt {
   color: #212427;
   font-family: "Roboto";
   font-size: 16px;

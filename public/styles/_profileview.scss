@@ -43,7 +43,8 @@ border-radius: $size-radius-elevated;
 
           ul {width: 100%;
             li {
-            @include flexProperty(flex, flex-start, center);
+            a{
+              @include flexProperty(flex, flex-start, center);
             padding: $spacing-padding-component-m $spacing-padding-component-s;
             align-items: center;
             gap: $spacing-gap-component-s;
@@ -62,6 +63,9 @@ border-radius: $size-radius-elevated;
               font-style: normal;
               font-weight: 400;
               line-height: 22px;
+            }
+
+            
             }
 
             &:nth-child(1){

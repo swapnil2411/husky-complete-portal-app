@@ -136,6 +136,7 @@ const Header = ({ companies, loading, error, selectedCompany, setSelectedCompany
       <Mobilemenu companies={companies}
     selectedCompany={selectedCompany}
     setSelectedCompany={setSelectedCompany}
+    isMobilemenuOpen={isMobilemenuOpen}
     className={isMobilemenuOpen ? "mobile_menu show" : "mobile_menu hide"} />
       ) : (
         <Megadropdown className={isMegamenuOpen ? "mega_menu show" : "mega_menu hide"}/>

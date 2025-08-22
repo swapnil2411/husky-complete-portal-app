@@ -33,6 +33,7 @@
             background: none;
             border: none;
             outline: none;
+            cursor: pointer
                     }
     }
 
@@ -115,6 +116,7 @@
                 background: transparent;
                 border: none;
                 outline: none;
+                cursor: pointer;
                 .txt{
                     @include flexProperty(flex, center, center);
                     color: #666;
