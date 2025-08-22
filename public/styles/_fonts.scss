@@ -1,0 +1,39 @@
+@font-face {
+    font-family: 'Industry_book';
+    src: url('../fonts/Industry-Book.woff2') format('woff2'),
+        url('../fonts/Industry-Book.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+@font-face {
+    font-family: 'Industry_bold';
+    src: url('../fonts/Industry-Bold.woff2') format('woff2'),
+        url('../fonts/Industry-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
+@font-face {
+    font-family: 'Industry_black';
+    src: url('../fonts/Industry-Black.woff2') format('woff2'),
+        url('../fonts/Industry-Black.woff') format('woff');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+@font-face {
+    font-family: 'Industry_medium';
+    src: url('../fonts/Industry-Medium.woff2') format('woff2'),
+        url('../fonts/Industry-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}

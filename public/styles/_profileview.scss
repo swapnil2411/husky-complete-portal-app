@@ -1,0 +1,77 @@
+.profile_container{
+    display: flex;
+width: 323px;
+padding: var(--spacing-padding-component-default, 16px);
+flex-direction: column;
+align-items: flex-start;
+border-radius: $size-radius-elevated;
+    background: $fill-surface-default;
+    box-shadow: 0 10px 25px 3px rgba(99, 99, 99, 0.18);
+
+    .profile_header {
+            @include flexProperty(flex, flex-start, center);
+            padding: $spacing-padding-component-m 0 $spacing-padding-component-l
+              0;
+            gap: $spacing-gap-component-m;
+            width: 100%;
+
+            .profile_details {
+              @include flexProperty(flex, center, flex-start);
+              flex-direction: column;
+              gap: $spacing-gap-component-xs;
+              h4 {
+                color: $fill-element-default;
+                text-align: center;
+                font-family: $font-family-support;
+                font-size: $size-text-title-medium;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 27px; /* 150% */
+              }
+
+              p {
+                color: $fill-element-muted;
+                text-align: center;
+                font-family: $font-family-support;
+                font-size: $size-text-body-large;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 22px;
+              }
+            }
+          }
+
+          ul {width: 100%;
+            li {
+            @include flexProperty(flex, flex-start, center);
+            padding: $spacing-padding-component-m $spacing-padding-component-s;
+            align-items: center;
+            gap: $spacing-gap-component-s;
+            align-self: stretch;
+
+            .icon {
+              @include flexProperty(flex, center, center);
+              width: $size-element-default;
+              height: $size-element-default;
+            }
+
+            .txt {
+              color: $fill-element-default;
+              font-family: $font-family-support;
+              font-size: $size-text-body-large;
+              font-style: normal;
+              font-weight: 400;
+              line-height: 22px;
+            }
+
+            &:nth-child(1){
+                border-top: 1px solid #cbd0da;
+            }
+
+            &:nth-child(1),
+            &:nth-child(3) {
+              border-bottom: 1px solid #cbd0da;
+            }
+          }
+        }
+}

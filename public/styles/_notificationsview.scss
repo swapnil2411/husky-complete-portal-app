@@ -1,0 +1,150 @@
+.notifications_container{
+    @include flexProperty(flex, flex-start, flex-start);
+    width: 632px;
+    padding: $spacing-padding-component-l 0;
+    flex-direction: column;
+    gap: $spacing-gap-component-m;
+    border-radius: $size-radius-elevated;
+    background: $fill-surface-default;
+    box-shadow: 0 10px 25px 3px rgba(99, 99, 99, 0.18);
+    @media (max-width: 991px){
+    width: 490px;
+  }
+
+    .notifications_header{
+        @include flexProperty(flex, flex-end, flex-start);
+        padding: 0 $spacing-padding-component-l;
+        gap: 10px;
+        align-self: stretch;
+
+        .mark_all_btn{
+            color: #666;
+            text-align: right;
+            font-family: $font-family-support;
+            font-size: $size-text-body-large;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 22px; /* 137.5% */
+            text-decoration-line: underline;
+            text-decoration-style: solid;
+            text-decoration-skip-ink: auto;
+            text-decoration-thickness: auto;
+            text-underline-offset: auto;
+            background: none;
+            border: none;
+            outline: none;
+                    }
+    }
+
+    .notifications_list{
+        @include flexProperty(flex, flex-start, flex-start);
+        padding: 0 $spacing-padding-component-l;
+        flex-direction: column;
+        // gap: 8px;
+        align-self: stretch;
+        // flex: 1 1 0;
+        // min-height: 0;
+        max-height: 320px;
+        overflow-y: auto;
+
+        .notification_item{
+            @include flexProperty(flex, flex-start, center);
+            padding: $spacing-padding-component-compact $spacing-padding-component-compact $spacing-padding-component-compact $spacing-padding-component-default;
+            gap: $spacing-gap-component-loose;
+            align-self: stretch;
+            border-bottom: 1px solid $border-surface-default;
+            background: $fill-surface-subdued;
+
+            .notification_time_date{
+                @include flexProperty(flex, flex-start, flex-start);
+                padding: 2px 0;
+                flex-direction: column;
+                gap: $spacing-gap-component-compact;
+                align-self: stretch;
+                color: $fill-element-default;
+                font-family: $font-family-support;
+                font-size: $size-text-label-medium;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                letter-spacing: 0.28px;
+                text-transform: uppercase;
+            }
+
+            .notification_content{
+                @include flexProperty(flex, flex-start, flex-start);
+                padding: 0 0 $spacing-padding-component-minimal $spacing-gap-component-default;
+                flex-direction: column;
+                gap: $spacing-gap-component-minimal;
+                flex: 1 0 0;
+                align-self: stretch;
+
+                .notification_title{
+                    display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 2;
+                align-self: stretch;
+                overflow: hidden;
+                color: $fill-element-default;
+                text-overflow: ellipsis;
+                font-family: $font-family-support;
+                font-size: $size-text-body-large;
+                font-style: normal;
+                font-weight: 600;
+                line-height: 22px;
+                }
+
+                .notification_subtitle{
+                    display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 2;
+                align-self: stretch;
+                overflow: hidden;
+                color: $fill-element-default;
+                text-overflow: ellipsis;
+                font-family: $font-family-support;
+                font-size: $size-text-body-medium;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                }
+            }
+
+            .details_btn{
+                @include flexProperty(flex, center, center);
+                background: transparent;
+                border: none;
+                outline: none;
+                .txt{
+                    @include flexProperty(flex, center, center);
+                    color: #666;
+                    text-align: right;
+                    font-family: $font-family-support;
+                    font-size: $size-text-body-large;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 22px; /* 137.5% */
+                    text-decoration-line: underline;
+                    text-decoration-style: solid;
+                    text-decoration-skip-ink: auto;
+                    text-decoration-thickness: auto;
+                    text-underline-offset: auto;
+                    background: none;
+                    border: none;
+                    outline: none;
+                }
+
+                .icon{
+                     @include flexProperty(flex, center, center);
+                    width:$size-element-default;
+                    height: $size-element-default;
+                    flex-shrink: 0;
+                    svg{
+                        width: 16px;
+                        height: 16px;
+                    }
+                }
+            }
+        }
+    }
+}

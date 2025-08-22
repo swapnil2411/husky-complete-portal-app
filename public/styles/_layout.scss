@@ -1,0 +1,261 @@
+.app_wrapper {
+  display: flex;
+  align-items: flex-start;
+  flex: 1 0 0;
+  align-self: stretch;
+  height: calc(100vh - 80px);
+  margin-top: 80px;
+  font-family: $font-family-support;
+  @media (max-width: $tablet){
+          margin-top: 56px;
+        }
+
+  .app_content {
+    height: 100%;
+    @include flexProperty(flex, flex-start, flex-start);
+    padding: $spacing-padding-layout-l;
+    flex-direction: column;
+    gap: $spacing-gap-layout-2xl;
+    flex: 1 0 0;
+    align-self: stretch;
+    overflow-y: auto;
+    @media (max-width: $laptop){
+      padding: $spacing-padding-component-spacious;
+    }
+
+    @media (max-width: $tablet){
+          gap: $spacing-gap-component-xl;
+        }
+
+     @media (max-width: $mobile){
+          padding: $spacing-padding-component-l $spacing-padding-component-m;
+        }
+    
+
+    .top_bar {
+      @include flexProperty(flex, flex-start, center);
+      align-self: stretch;
+       @media (max-width: $tablet){
+          flex-wrap: wrap;
+          gap: $spacing-gap-component-xl;
+          @include flexProperty(flex, center, center);
+        }
+
+      &_titlesubtitles {
+        @include flexProperty(flex, flex-start, flex-start);
+        flex-direction: column;
+        gap: 16px;
+        flex: 1 0 0;
+
+        @media (max-width: $tablet){
+          flex: 0 0 100%;
+          @include flexProperty(flex, flex-start, center);
+        }
+
+        @media (max-width: $laptop){
+          padding-right: $spacing-padding-component-s;
+        }
+        
+        &_heading {
+          color: $fill-element-default;
+          font-family: $font-family-support;
+          font-size: $size-text-display-small;
+          font-style: normal;
+          font-weight: 300;
+          line-height: normal;
+
+          @media (max-width: $laptop){
+            font-size: $size-text-headline-large;
+          }
+
+          @media (max-width: $tablet){
+            font-size: $size-element-default;
+          }
+        }
+
+        &_subheading {
+          @include flexProperty(flex, flex-start, flex-start);
+          flex-direction: column;
+          gap: 4px;
+          align-self: stretch;
+
+          @media (max-width: $tablet){
+          @include flexProperty(flex, flex-start, center);
+        }
+          .date {
+            color: $fill-element-default;
+            /* paragraphs/body1 */
+            font-family: $font-family-support;
+            font-size: $size-text-title-medium;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 27px;
+
+            @media (max-width: $laptop){
+            font-size: $size-text-title-small;
+          }
+          }
+
+          .trends {
+            color: $fill-element-subdued;
+            /* paragraphs/body2 */
+            font-family: $font-family-support;
+            font-size: $size-text-body-large;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 22px;
+            @media (max-width: $laptop){
+              font-size: 14px;
+            }
+            @media (max-width: $tablet){
+          text-align: center;
+        }
+          }
+        }
+      }
+
+      &_active_users_frame{
+        @include flexProperty(flex, center, center);
+        height: 113px;
+        padding: $spacing-padding-component-m $spacing-padding-component-l;
+        flex-direction: column;
+        gap: $spacing-gap-component-m;
+        border-radius: $size-radius-default;
+        border: 1px dashed $border-surface-highlight-default;
+        box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.10);
+        @media (max-width: $tablet){
+            height: unset;
+        }
+        p{
+            color: $fill-element-default;
+            text-align: center;
+            font-family: $font-family-support;
+            font-size: $size-text-title-medium;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 27px;
+
+           @media (max-width: $tablet){
+            font-size: $size-text-title-small;
+        }
+        }
+
+        .border_btn{
+            @include flexProperty(flex, center, center);
+            height: $size-action-emphasis;
+            min-width: 80px;
+            padding: $spacing-padding-component-s $spacing-padding-component-l;
+            gap: $spacing-gap-component-s;
+
+            .icon{
+                @include flexProperty(flex, center, center);
+                width: $size-element-default;
+                height: $size-element-default;
+            }
+            .txt{
+                color: $fill-element-onSecondary-default;
+                font-family: $font-family-support;
+                font-size: $size-text-body-large;
+                font-style: normal;
+                font-weight: 500;
+                line-height: normal;
+                letter-spacing: 0.32px;
+                text-transform: uppercase;
+
+                @media (max-width: $tablet){
+            font-size: $size-text-label-medium;
+        }
+            }
+        }
+      }
+
+      &_user_tiles{
+        @include flexProperty(flex, flex-start, flex-start);
+        gap: $spacing-gap-layout-m;
+
+        @media (max-width: $laptop){
+      gap: $spacing-gap-component-m;
+    }
+
+    @media (max-width: $tablet){
+      width: 100%;
+      @include flexProperty(flex, center, center)
+    }
+
+        &_active_user_tile, &_pending_user_tile{
+          height: 100px;
+          @include flexProperty(flex, center, flex-start);
+          width: 200px;
+          padding: $spacing-padding-component-m $spacing-padding-component-l;
+          flex-direction: column;
+          gap: $spacing-gap-component-s;
+          border-radius: $size-radius-default;
+          background: $fill-surface-default;
+          box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.10);
+
+          @media (max-width: $laptop){
+      width: 180px;
+      padding: $spacing-padding-component-m;
+    }
+
+    
+          @media (max-width: $mobile){
+      width: 50%;
+    }
+
+          p{
+            color: $fill-element-default;
+            font-family: 'Industry_bold';
+            font-size: $size-text-title-medium;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+            letter-spacing: 0.36px;
+            text-transform: uppercase;
+
+             @media (max-width: $laptop){
+              font-size: $size-text-title-small;
+            }
+          }
+
+          h4{
+            color: $fill-element-default;
+            text-align: center;
+            font-family: $font-family-support;
+            font-size: $size-text-headline-large;
+            font-style: normal;
+            font-weight: 300;
+            line-height: normal;
+          }
+          
+          &.active_user_tile_border, &.pending_user_tile_border{
+            border: 1px dashed var(--border-surface-highlight-default, #1F50B4);
+            height: 100px;
+            background: transparent;
+
+            @media (max-width: $tablet){
+      @include flexProperty(flex, center, center);
+    }
+
+            h6{
+              color: $fill-element-default;
+              text-align: center;
+
+              /* paragraphs/body1 */
+              font-family: $font-family-support;
+              font-size: $size-text-title-medium;
+              font-style: normal;
+              font-weight: 400;
+              line-height: 27px; /* 150% */
+
+               @media (max-width: $laptop){
+              font-size: 14px;
+              line-height: 22px;
+            }
+            }
+          }
+        }
+      }
+    }
+  }
+}

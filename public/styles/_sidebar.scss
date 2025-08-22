@@ -1,0 +1,114 @@
+aside {
+  width: 296px;
+  height: 100%;
+    background: $fill-surface-default;
+    @media (max-width: $laptop){
+      width: 220px;
+    }
+    &.toogle_side_navigation{
+      position: fixed;
+      // top: 0;
+      left: 0;
+      z-index: 1000;
+      transform: translateX(-100%); // hidden by default
+      transition: 1s cubic-bezier(.36,-0.01,0,.77);
+    }
+
+    &.sidebar_open {
+    transform: translateX(0);
+  }
+
+  &.sidebar_closed {
+    transform: translateX(-100%);
+  }
+
+    .block_button{
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 30px;
+      height: 45px;
+      right: -30px;
+      background: $brand-logo;
+      border: none;
+      z-index: 1001;
+      border-radius: 0 $size-radius-default $size-radius-default 0;
+      display: none;
+
+      @media (max-width: $tablet){
+        display: block;
+      }
+
+       svg{
+        color: #fff;
+       }
+    }
+
+  .side_navigation {
+    @include flexProperty (flex, space-between, flex-start);
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+
+    
+
+    
+
+    &_mobile{
+      display: none;
+       @media (max-width: $mobile) {
+        display: block;
+       }
+    }
+
+    &_top, &_bottom {
+      width: 100%;
+      nav ul li a{
+        @include flexProperty(flex, flex-start, center);
+        padding: $spacing-padding-component-default;
+        gap: $spacing-gap-component-compact;
+        flex: 1 0 auto; // prevents shrink-to-zero issues
+        width: 100%;
+        @media (max-width: $laptop){
+          padding: $spacing-padding-component-default $spacing-padding-component-compact;
+        }
+        &.active-link{
+          background: $fill-surface-subdued;
+          position: relative;
+
+          &::after{
+            content: '';
+            display: block;
+            width: 4px;
+            height: 100%;
+            position: absolute;
+            right: 0;
+            top: 0;
+            background: $brand-logo;
+          }
+
+          .nav_txt{
+            font-weight: 600; 
+          }
+        }
+        .nav_icon{
+            @include flexProperty(flex, center, center);
+            width: $size-element-default;
+            height: $size-element-default;
+        }
+
+        .nav_txt{
+            color: $fill-element-default;
+font-size: $size-text-body-large;
+font-style: normal;
+font-weight: 400;
+line-height: 22px;
+
+@media (max-width: $mobile){
+  font-size: 14px;
+}
+        }
+      }
+    }
+  }
+}

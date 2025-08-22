@@ -1,0 +1,5 @@
+@mixin flexProperty($value, $justify,  $align){
+    display:  $value;
+    justify-content:  $justify;
+    align-items: $align;
+}

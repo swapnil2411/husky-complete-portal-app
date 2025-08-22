@@ -1,0 +1,92 @@
+$spacing-gap-layout-3xl: 96px;
+$spacing-gap-layout-2xl: 64px;
+$spacing-gap-layout-xl: 42px;
+$spacing-gap-layout-m: 24px;
+$spacing-gap-component-xl: 32px;
+$spacing-gap-component-xs: 4px;
+$spacing-gap-component-s: 8px;
+$spacing-gap-component-m: 16px;
+$spacing-gap-component-l: 16px;
+$spacing-gap-component-compact:8px;
+$spacing-gap-component-default: 16px;
+$spacing-gap-component-loose: 24px;
+$spacing-gap-component-minimal: 4px;
+$spacing-padding-component-2xl: 48px;
+$spacing-padding-component-xl: 32px;
+$spacing-padding-component-spacious: 32px;
+$spacing-padding-component-l: 24px;
+$spacing-padding-component-m: 16px;
+$spacing-padding-component-s: 8px;
+$spacing-padding-component-xs: 4px;
+$spacing-padding-layout-l: 48px;
+$spacing-padding-layout-s: 24px;
+$spacing-padding-layout-m: 32px;
+$spacing-padding-layout-2xs: 12px;
+$spacing-padding-component-loose: 24px;
+$spacing-padding-component-default: 16px;
+$spacing-padding-component-minimal: 4px;
+$spacing-padding-component-compact:  8px;
+$size-action-emphasis: 48px;
+$size-element-emphasis:48px;
+$size-element-default:24px;
+$size-text-display-small: 40px;
+$size-text-title-large: 20px;
+$size-text-title-medium: 18px;
+$size-text-title-small: 16px;
+$size-text-label-large: 16px;
+$size-text-label-medium: 14px;
+$size-text-body-medium: 14px;
+$size-text-body-large: 16px;
+$size-text-headline-large: 32px;
+$size-text-display-large: 56px;
+$size-radius-elevated: 12px;
+$size-radius-default: 8px;
+$size-radius-compact: 4;
+$size-action-default: 36px;
+$border-surface-highlight-default: #1F50B4;
+$border-action-secondary-default: #1F50B4;
+$border-surface-default: #CBD0DA;
+$fill-element-onSecondary-default: #1F50B4;
+$fill-element-highlight-default: #1F50B4;
+$border-surface-subdued: #DFE5F0;
+$chart-decorative-A3: #696225; 
+$fill-surface-default: #fff;
+$fill-surface-brand-default: #D2290F;
+$fill-element-subdued: #53565A;
+$fill-surface-subdued: #F5F7FA;
+$fill-element-default: #212427;
+$fill-surface-hover: #EAEEF5;
+$fill-element-muted: #7B7E84;
+$brand-support: #53565A;
+$border-surface-status-neutral: #FCED79;
+$border-surface-decorative-J: #54D2B9;
+$font-family-support: 'Roboto';
+$brand-logo: #D2290F;
+$fill-action-tertiary-muted-pressed: #DFE5F0;
+$size-element-small: 11px;
+
+$size-action-huge-desktop: 80px;
+$size-action-huge-mobile: 56px;
+
+$mobile: 600px;
+$tablet: 991px;
+$laptop: 1440px;
+
+:root {
+  --size-action-huge: #{$size-action-huge-desktop};
+}
+
+@media (max-width: $tablet) {
+  :root {
+    --size-action-huge: #{$size-action-huge-mobile};
+  }
+}
+
+.button {
+  width: var(--size-action-huge);
+  height: var(--size-action-huge);
+}
+
+
+
+

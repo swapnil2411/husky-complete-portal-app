@@ -1,0 +1,158 @@
+{
+  "companies": [
+    {
+      "companyId": 1,
+      "name": "ABC Plastics",
+      "setupDate": "2025-05-14",
+      "trends": { "period": "01 Apr - 30 Apr, 2025", "summary": "Last month performance" },
+      "activeUsers": 0,
+      "pendingUsers": 0,
+      "plants": [
+        {
+          "id": 101,
+          "name": "DYNAPACK PACKAGING (VIETNAM)",
+          "location": "Vietnam",
+          "services": ["Advantage + Enterprise", "Spare Parts", "Advantage + Elite", "Maintenance"],
+          "machines": 23,
+          "users": 0
+        },
+        {
+          "id": 102,
+          "name": "Hooghly, Kolkata",
+          "location": "India",
+          "services": ["Spare Parts", "Maintenance"],
+          "machines": 15,
+          "users": 0
+        }
+      ],
+      "users": [
+        {
+          "id": 1,
+          "name": "John Doe",
+          "role": "Admin",
+          "status": "active",
+          "email": "john@abcplastics.com",
+          "assignedPlant": 101
+        },
+        {
+          "id": 2,
+          "name": "Jane Smith",
+          "role": "Manager",
+          "status": "pending",
+          "email": "jane@abcplastics.com",
+          "assignedPlant": 102
+        }
+      ],
+      "roles": ["Admin", "Manager", "Operator", "Viewer"]
+    },
+    {
+      "companyId": 2,
+      "name": "GreenTech Solutions",
+      "setupDate": "2024-11-20",
+      "trends": { "period": "01 Jul - 31 Jul, 2025", "summary": "Energy saving increased by 15%" },
+      "activeUsers": 0,
+      "pendingUsers": 5,
+      "plants": [
+        {
+          "id": 201,
+          "name": "Berlin Eco Plant",
+          "location": "Germany",
+          "services": ["Spare Parts", "Maintenance"],
+          "machines": 12,
+          "users": 0
+        },
+        {
+          "id": 202,
+          "name": "Munich Solar Factory",
+          "location": "Germany",
+          "services": ["Advantage + Elite", "Maintenance"],
+          "machines": 8,
+          "users": 0
+        },
+        {
+          "id": 203,
+          "name": "Amsterdam Wind Facility",
+          "location": "Netherlands",
+          "services": ["Spare Parts", "Advantage + Enterprise"],
+          "machines": 5,
+          "users": 0
+        }
+      ],
+      "users": [
+        {
+          "id": 10,
+          "name": "Alice Johnson",
+          "role": "Admin",
+          "status": "active",
+          "email": "alice@greentech.com",
+          "assignedPlant": 201
+        },
+        {
+          "id": 11,
+          "name": "Bob Hansen",
+          "role": "Technician",
+          "status": "active",
+          "email": "bob@greentech.com",
+          "assignedPlant": 203
+        }
+      ],
+      "roles": ["Admin", "Technician", "Operator", "Viewer"]
+    },
+    {
+      "companyId": 3,
+      "name": "Oceanic Manufacturing Ltd.",
+      "setupDate": "2023-09-05",
+      "trends": { "period": "01 Jan - 31 Mar, 2025", "summary": "Quarterly production up 8%" },
+      "activeUsers": 68,
+      "pendingUsers": 4,
+      "plants": [
+        {
+          "id": 301,
+          "name": "Singapore Bulk Plant",
+          "location": "Singapore",
+          "services": ["Spare Parts", "Advantage + Elite", "Maintenance"],
+          "machines": 18,
+          "users": 40
+        },
+        {
+          "id": 302,
+          "name": "Sydney Production Hub",
+          "location": "Australia",
+          "services": ["Advantage + Enterprise", "Spare Parts"],
+          "machines": 14,
+          "users": 28
+        }
+      ],
+      "users": [
+        {
+          "id": 20,
+          "name": "Charlie Wu",
+          "role": "Manager",
+          "status": "active",
+          "email": "charlie@oceanic.com",
+          "assignedPlant": 301
+        },
+        {
+          "id": 21,
+          "name": "Dana Lee",
+          "role": "Viewer",
+          "status": "pending",
+          "email": "dana@oceanic.com",
+          "assignedPlant": 302
+        }
+      ],
+      "roles": ["Admin", "Manager", "Operator", "Viewer"]
+    },
+    {
+      "companyId": 4,
+      "name": "FutureWorks Industries",
+      "setupDate": "2025-08-10",
+      "trends": { "period": "01 Aug - 31 Aug, 2025", "summary": "New company onboarded" },
+      "activeUsers": 0,
+      "pendingUsers": 0,
+      "plants": [],
+      "users": [],
+      "roles": []
+    }
+  ]
+}

@@ -1,0 +1,554 @@
+.mobile_menu {
+  @include flexProperty(flex, flex-start, flex-start);
+  width: 100%;
+  height: calc(100vh - 56px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: fixed;
+  z-index: 1002;
+  top: 56px;
+  left: -100%;
+  transition: left 0.3s ease;
+  padding: $spacing-padding-layout-s $spacing-padding-layout-m
+    $spacing-padding-layout-l $spacing-padding-layout-m;
+  flex-direction: column;
+  flex-shrink: 0;
+  background: $fill-surface-default;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.03);
+  gap: $spacing-gap-layout-xl;
+
+  &.show {
+    left: 0;
+  }
+
+  &.hide {
+    left: -100%;
+  }
+
+  &_top {
+    width: 100%;
+    &_item {
+      .dropdown_header {
+        @include flexProperty(flex, flex-start, center);
+        padding: $spacing-padding-component-m $spacing-padding-component-s;
+        align-items: center;
+        gap: $spacing-gap-component-s;
+        align-self: stretch;
+        position: relative;
+        border-bottom: 1px solid #cbd0da;
+
+        .item_icon {
+          @include flexProperty(flex, center, center);
+          width: $size-element-default;
+          height: $size-element-default;
+        }
+
+        .item_txt {
+          color: $fill-element-default;
+          font-family: $font-family-support;
+          font-size: $size-text-body-large;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 22px;
+        }
+
+        .angle_right {
+          position: absolute;
+          right: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          @include flexProperty(flex, center, center);
+          width: $size-element-default;
+          height: $size-element-default;
+
+          svg {
+            width: 16px;
+            flex-shrink: 0;
+          }
+        }
+      }
+
+      .submenu {
+        position: absolute;
+        top: 0;
+        left: 100%; /* hidden by default */
+        width: 100%;
+        height: max-content;
+        background: #fff;
+        max-height: 100vh;
+        overflow-y: auto;
+        transition: left 0.4s ease;
+        z-index: 20;
+        padding: $spacing-padding-layout-m $spacing-padding-layout-m
+          $spacing-padding-layout-l $spacing-padding-layout-m;
+        &.profile {
+          .profile_header {
+            @include flexProperty(flex, flex-start, center);
+            padding: $spacing-padding-component-m 0 $spacing-padding-component-l
+              0;
+            gap: $spacing-gap-component-m;
+
+            .profile_details {
+              @include flexProperty(flex, center, flex-start);
+              flex-direction: column;
+              gap: $spacing-gap-component-xs;
+              h4 {
+                color: $fill-element-default;
+                text-align: center;
+                font-family: $font-family-support;
+                font-size: $size-text-title-medium;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 27px; /* 150% */
+              }
+
+              p {
+                color: $fill-element-muted;
+                text-align: center;
+                font-family: $font-family-support;
+                font-size: $size-text-body-large;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 22px;
+              }
+            }
+          }
+
+          ul li {
+            @include flexProperty(flex, flex-start, center);
+            padding: $spacing-padding-component-m $spacing-padding-component-s;
+            align-items: center;
+            gap: $spacing-gap-component-s;
+            align-self: stretch;
+
+            .icon {
+              @include flexProperty(flex, center, center);
+              width: $size-element-default;
+              height: $size-element-default;
+            }
+
+            .txt {
+              color: $fill-element-default;
+              font-family: $font-family-support;
+              font-size: $size-text-body-large;
+              font-style: normal;
+              font-weight: 400;
+              line-height: 22px;
+            }
+
+            &:nth-child(1),
+            &:nth-child(3) {
+              border-bottom: 1px solid #cbd0da;
+            }
+          }
+        }
+
+        &.companies {
+          .content {
+            @include flexProperty(flex, flex-start, flex-start);
+            padding-top: var(--spacing-padding-layout-2xs, 12px);
+            flex-direction: column;
+            gap: $spacing-gap-component-s;
+            align-self: stretch;
+
+            .company_header p {
+              color: $fill-element-default;
+              text-align: center;
+              font-family: $font-family-support;
+              font-size: $size-text-title-medium;
+              font-style: normal;
+              font-weight: 400;
+              line-height: 27px; /* 150% */
+            }
+
+            ul li {
+              @include flexProperty(flex, flex-start, center);
+              height: $size-action-default;
+              padding: 0 $spacing-padding-component-s 0 $spacing-gap-component-m;
+              align-self: stretch;
+              overflow: hidden;
+              color: $fill-element-default;
+              text-overflow: ellipsis;
+              font-family: $font-family-support;
+              font-size: $size-text-label-large;
+              font-style: normal;
+              font-weight: 400;
+              line-height: normal;
+              letter-spacing: 0.32px;
+            }
+          }
+        }
+
+        &.notifications {
+          .content {
+            @include flexProperty(flex, flex-start, flex-start);
+            padding-top: var(--spacing-padding-layout-2xs, 12px);
+            flex-direction: column;
+            gap: $spacing-gap-component-s;
+            align-self: stretch;
+
+            .notification_header {
+              @include flexProperty(flex, center, center);
+              gap: 10px;
+              align-self: stretch;
+              p {
+                flex: 1 0 0;
+                color: $fill-element-default;
+                font-family: $font-family-support;
+                font-size: $size-text-title-medium;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 27px; /* 150% */
+              }
+              span {
+                color: $fill-element-subdued;
+                font-family: $font-family-support;
+                font-size: $size-text-body-large;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 22px;
+                text-decoration-line: underline;
+                text-decoration-style: solid;
+                text-decoration-skip-ink: auto;
+                text-decoration-thickness: auto;
+                text-underline-offset: auto;
+              }
+            }
+
+            ul {
+              max-height: 380px;
+              overflow-y: auto;
+              overflow-x: hidden;
+              border-radius: $size-radius-default;
+
+              li {
+                @include flexProperty(flex, flex-start, center);
+                padding: $spacing-padding-component-s
+                  $spacing-padding-component-m;
+                align-items: center;
+                gap: $spacing-gap-component-l;
+                align-self: stretch;
+                background: $fill-surface-subdued;
+                &:not(:last-child) {
+                  border-bottom: 1px solid $border-surface-default;
+                }
+
+                .date {
+                  @include flexProperty(flex, flex-start, flex-start);
+                  padding: 2px 0;
+                  flex-direction: column;
+                  gap: $spacing-gap-component-s;
+                  align-self: stretch;
+
+                  span {
+                    color: $fill-element-default;
+                    font-family: $font-family-support;
+                    font-size: $size-text-label-medium;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                    letter-spacing: 0.28px;
+                    text-transform: uppercase;
+                  }
+                }
+
+                .notification_txt {
+                  @include flexProperty(flex, flex-start, flex-start);
+                  padding: 0 0 $spacing-padding-component-xs
+                    $spacing-gap-component-m;
+                  flex-direction: column;
+                  gap: $spacing-gap-component-xs;
+                  flex: 1 0 0;
+                  align-self: stretch;
+                  border-left: 2px solid $border-surface-status-neutral;
+
+                  h4 {
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 2;
+                    align-self: stretch;
+                    overflow: hidden;
+                    color: $fill-element-default;
+                    text-overflow: ellipsis;
+                    font-family: $font-family-support;
+                    font-size: $size-text-body-large;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: 22px; /* 137.5% */
+                  }
+                  p {
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 2;
+                    align-self: stretch;
+                    overflow: hidden;
+                    color: $fill-element-subdued;
+                    text-overflow: ellipsis;
+                    font-family: $font-family-support;
+                    font-size: $size-text-body-medium;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                  }
+                }
+
+                .notification_link {
+                  @include flexProperty(flex, center, center);
+                  gap: $spacing-gap-component-xs;
+                  .txt {
+                    color: $fill-element-subdued;
+                    font-family: $font-family-support;
+                    font-size: $size-text-body-large;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 22px; /* 137.5% */
+                    text-decoration-line: underline;
+                    text-decoration-style: solid;
+                    text-decoration-skip-ink: auto;
+                    text-decoration-thickness: auto;
+                    text-underline-offset: auto;
+                  }
+
+                  .icon {
+                    @include flexProperty(flex, center, center);
+                    width: var(--size-element-default, 24px);
+                    height: var(--size-element-default, 24px);
+
+                    svg {
+                      width: 16px;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        &.calendar {
+          .content {
+            @include flexProperty(flex, flex-start, flex-start);
+            padding-top: var(--spacing-padding-layout-2xs, 12px);
+            flex-direction: column;
+            gap: $spacing-gap-component-s;
+            align-self: stretch;
+
+            .calender_header {
+              @include flexProperty(flex, center, center);
+              gap: 10px;
+              align-self: stretch;
+              p {
+                flex: 1 0 0;
+                color: $fill-element-default;
+                font-family: $font-family-support;
+                font-size: $size-text-title-medium;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 27px; /* 150% */
+              }
+              span {
+                color: $fill-element-subdued;
+                font-family: $font-family-support;
+                font-size: $size-text-body-large;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 22px;
+                text-decoration-line: underline;
+                text-decoration-style: solid;
+                text-decoration-skip-ink: auto;
+                text-decoration-thickness: auto;
+                text-underline-offset: auto;
+              }
+            }
+
+            ul{
+              width: 100%;
+              li{
+              @include flexProperty(flex, flex-start, flex-start);
+              height: 286px;
+              flex-direction: column;
+              align-self: stretch;
+              .date{
+               @include flexProperty(flex, flex-start, flex-start);
+                padding: $spacing-padding-component-s;
+                gap: $spacing-gap-component-s;
+                align-self: stretch;
+                background: $fill-surface-subdued;
+                color: $fill-element-default;
+                font-family: $font-family-support;
+                font-size: $size-text-body-large;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 22px;
+              }
+
+              .calender_events{
+                @include flexProperty(flex, center, flex-start);
+                padding-top: $spacing-padding-component-s;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                gap: $spacing-gap-component-s;
+                align-self: stretch;
+
+                &_item{
+                  @include flexProperty(flex, flex-start, flex-start);
+                  padding-bottom: $spacing-padding-component-s;
+                  align-self: stretch;
+                  border-bottom: 1px solid $border-surface-default;
+                  .time{
+                    width: 120px;
+                    color: $fill-element-default;
+                    font-family: $font-family-support;
+                    font-size: $size-text-label-medium;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                    letter-spacing: 0.28px;
+                    text-transform: uppercase;
+                  }
+                  &_content{
+                    @include flexProperty(flex, flex-start, flex-start);
+                    padding: 0 0 $spacing-padding-component-xs 9px;
+                    flex-direction: column;
+                    gap: $spacing-gap-component-xs;
+                    flex: 1 0 0;
+                    border-left: 2px solid $border-surface-decorative-J;
+                    h4 {
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 2;
+                    align-self: stretch;
+                    overflow: hidden;
+                    color: $fill-element-default;
+                    text-overflow: ellipsis;
+                    font-family: $font-family-support;
+                    font-size: $size-text-body-large;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: 22px; /* 137.5% */
+                  }
+                  p {
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 2;
+                    align-self: stretch;
+                    overflow: hidden;
+                    color: $fill-element-default;
+                    text-overflow: ellipsis;
+                    font-family: $font-family-support;
+                    font-size: $size-text-body-medium;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                  }
+                  }
+                }
+              }
+            }
+            }
+          }
+        }
+
+        &.open {
+          left: 0; /* slides in */
+        }
+
+        .back_btn {
+          position: absolute;
+          @include flexProperty(flex, center, center);
+          width: $size-action-emphasis;
+          height: $size-action-emphasis;
+          gap: $spacing-gap-component-compact;
+          left: 0;
+          top: 0;
+        }
+      }
+    }
+
+    .submenu_overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 10;
+    }
+  }
+
+  &_bottom {
+    width: 100%;
+
+    &_list {
+      @include flexProperty(flex, flex-start, flex-start);
+      flex-direction: column;
+      flex-shrink: 0;
+      gap: $spacing-gap-layout-xl;
+    }
+    &_item {
+      @include flexProperty(flex, flex-start, flex-start);
+      //   padding: $spacing-padding-component-m $spacing-padding-component-s;
+      flex-direction: column;
+      gap: 28px;
+      align-self: stretch;
+      .dropdown_header {
+        position: relative;
+        width: 100%;
+
+        .title {
+          color: var(--fill-element-default, #212427);
+
+          /* headings/title1 */
+          font-family: "Industry_bold";
+          font-size: $size-text-title-large;
+          font-style: normal;
+          font-weight: 600;
+          line-height: normal;
+          letter-spacing: 0.2px;
+          text-transform: uppercase;
+        }
+        .angle_right {
+          position: absolute;
+          right: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          @include flexProperty(flex, center, center);
+          width: $size-element-default;
+          height: $size-element-default;
+
+          svg {
+            width: 16px;
+            flex-shrink: 0;
+          }
+        }
+      }
+
+      .bottom_options {
+        width: 100%;
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease, opacity 0.3s ease;
+        &.open {
+          max-height: 300px; /* set larger than content height */
+          opacity: 1;
+        }
+        ul {
+          @include flexProperty(flex, flex-start, flex-start);
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 14px;
+          align-self: stretch;
+          li {
+            color: $fill-element-default;
+            font-family: $font-family-support;
+            font-size: $size-text-title-medium;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 27px;
+          }
+        }
+      }
+    }
+  }
+}

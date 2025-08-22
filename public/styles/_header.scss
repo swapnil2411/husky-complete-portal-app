@@ -1,0 +1,177 @@
+.global_navigation_header {
+  @include flexProperty(flex, space-between, center);
+  height: 80px;
+  padding-right: $spacing-padding-component-xl;
+  flex-shrink: 0;
+  align-self: stretch;
+  box-shadow: 0 3px 10px 2px rgba(99, 99, 99, 0.1);
+  border-bottom: 1px solid $border-surface-subdued;
+  background: $fill-surface-default;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+
+  @media (max-width: $tablet) {
+    padding-right: $spacing-padding-component-xs;
+    height: 56px;
+  }
+
+  &_left {
+    @include flexProperty(flex, center, center);
+    gap: $spacing-gap-component-xl;
+    @media (max-width: $tablet) {
+      padding-right: $spacing-padding-component-xs;
+      gap: $spacing-gap-component-m;
+    }
+    &_button {
+      @include flexProperty(flex, center, center);
+      background: $fill-surface-brand-default;
+      &_base_icon {
+        @include flexProperty(flex, center, center);
+        width: var(--size-action-huge);
+        height: var(--size-action-huge);
+        cursor: pointer;
+        @media (max-width: $tablet) {
+          svg {
+            width: 18px;
+            height: 12px;
+          }
+        }
+        &.close{
+            @media (max-width: $tablet) {
+          svg {
+            width: 24px;
+            height: unset;
+          }
+        }
+        }
+      }
+    }
+
+    &_logo {
+      @media (max-width: $tablet) {
+        svg {
+          width: 59.583px;
+          height: $size-element-small;
+          aspect-ratio: 65/12;
+        }
+      }
+    }
+    &_divider {
+      width: 1px;
+      height: 32px;
+      background: $brand-support;
+    }
+    &_service_title {
+      font-family: "Industry_bold";
+      font-size: 24px;
+      font-weight: 600;
+      line-height: normal;
+      text-transform: uppercase;
+      color: $fill-element-default;
+
+      @media (max-width: $tablet) {
+        font-size: $size-text-title-small;
+      }
+    }
+  }
+  &_actions {
+    @include flexProperty(flex, center, center);
+    gap: $spacing-gap-component-s;
+
+    @media (max-width: $mobile) {
+      display: none;
+    }
+
+    &_dropdown {
+      .react-dropdown-select {
+        padding: 0;
+        border: none;
+
+        &:focus-within {
+          box-shadow: none;
+          outline: none;
+        }
+
+        .react-dropdown-select-content {
+          min-width: 152px;
+          z-index: -1;
+          @media (max-width: $tablet) {
+            min-width: 136px;
+          }
+          span {
+            font-family: $font-family-support;
+            font-style: normal;
+            font-weight: 600;
+            color: $fill-element-default;
+            font-size: $size-text-body-large;
+            line-height: 22px;
+
+            @media (max-width: $tablet) {
+              font-size: 14px;
+            }
+          }
+        }
+
+        .react-dropdown-select-no-data {
+          font-family: $font-family-support;
+          font-style: normal;
+          font-weight: 600;
+          color: $fill-element-default;
+          font-size: $size-text-body-large;
+          line-height: 22px;
+        }
+
+        .react-dropdown-select-dropdown {
+          width: 200px;
+          .react-dropdown-select-item {
+            font-family: $font-family-support;
+            font-style: normal;
+            font-weight: 400;
+            color: $fill-element-default;
+            font-size: $size-text-body-large;
+            line-height: 22px;
+          }
+        }
+
+        .react-dropdown-select-dropdown-handle {
+          @include flexProperty(flex, center, center);
+          width: $size-element-emphasis;
+          height: $size-element-emphasis;
+
+          @media (max-width: $tablet) {
+            width: 32px;
+            height: 32px;
+          }
+        }
+      }
+    }
+
+    &_wrapper {
+      position: relative;
+      &_button {
+        @include flexProperty(flex, center, center);
+        width: $size-element-emphasis;
+        height: $size-element-emphasis;
+        cursor: pointer;
+
+        &.active{
+          background: $fill-action-tertiary-muted-pressed;
+        }
+
+        @media (max-width: $tablet) {
+          width: 32px;
+          height: 32px;
+        }
+      }
+
+      &_modal{
+        position: absolute;
+        top: calc(100% + 20px);
+        right: 0;
+      }
+    }
+  }
+}
