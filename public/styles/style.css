@@ -1384,6 +1384,11 @@ aside .side_navigation_top nav ul li a .nav_txt, aside .side_navigation_bottom n
   overflow-x: auto;
   gap: 0 16px;
 }
+@-moz-document url-prefix() {
+  .calendar_container .calendar_header .calendar_scroll {
+    scrollbar-width: none; /* Hides scrollbar in Firefox */
+  }
+}
 .calendar_container .calendar_header .calendar_scroll::-webkit-scrollbar {
   display: none;
 }
