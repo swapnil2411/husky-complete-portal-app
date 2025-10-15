@@ -37,6 +37,7 @@
 @import "variables";
 @import "mixin";
 @import "header";
+@import "_commonpageheader";
 @import "loader";
 @import "layout";
 @import "sidebar";
@@ -45,6 +46,7 @@
 @import "calenderview";
 @import "notificationsview";
 @import "profileview";
+@import "users";
 
 * {
   margin: 0;
@@ -63,7 +65,7 @@ a{
 }
 
 body {
-  background: $fill-surface-hover;
+  background: $fill-surface-subdued;
 }
 
 .under_construction_wrapper{
@@ -86,6 +88,14 @@ body {
   background: transparent;
   border-radius: $size-radius-compact;
   cursor: pointer;
+}
+
+.solid_btn{
+  border: none;
+  background: $border-action-secondary-default;
+  border-radius: $size-radius-compact;
+  cursor: pointer;
+  color: #fff;
 }
 
 // Company Overview CSS

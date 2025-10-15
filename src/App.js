@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Mainlayout from './layout/Mainlayout';
-import Companyoverview from './pages/Companyoverview';
-import Users from './pages/Users';
+import Companyoverview from './pages/companyoverview/Companyoverview';
+import Users from './pages/users/Users';
 import Roles from './pages/Roles';
 import Support from './pages/Support';
 

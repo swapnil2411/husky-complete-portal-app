@@ -1,0 +1,46 @@
+.common_page_header{
+    width: 100%;
+    .common_page_header_title_with_element{
+        @include flexProperty(flex, space-between, center);
+        .page_heading{
+            color: $fill-element-default;
+            font-family: $font-family-support;
+            font-size: $size-text-display-small;
+            font-style: normal;
+            font-weight: 300;
+            line-height: normal;
+        }
+        .solid_btn{
+            @include flexProperty(flex, center, center);
+            height: $size-action-emphasis;
+            min-width: 80px;
+            padding: $spacing-padding-component-s $spacing-padding-component-l;
+            gap: $spacing-gap-component-s;
+
+            .icon{
+                @include flexProperty(flex, center, center);
+                width: $size-element-default;
+                height: $size-element-default;
+                svg{
+                    path{
+                        fill: $fill-element-onPrimary-default;
+                    }
+                }
+            }
+            .txt{
+                color: $fill-element-onPrimary-default;
+                font-family: $font-family-support;
+                font-size: $size-text-body-large;
+                font-style: normal;
+                font-weight: 500;
+                line-height: normal;
+                letter-spacing: 0.32px;
+                text-transform: uppercase;
+
+                @media (max-width: $tablet){
+            font-size: $size-text-label-medium;
+        }
+            }
+        }
+    }
+}
