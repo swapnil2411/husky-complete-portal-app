@@ -991,7 +991,7 @@ export default function Userdetails() {
             <div className="user-info">
               <img
                 src={userInfo.avatar}
-                alt={`Profile picture of ${userInfo.name} ${userInfo.surname}`}
+                alt={`Profile of ${userInfo.name} ${userInfo.surname}`}
                 className="avatar"
               />
               <div className='user-activity'>
@@ -1140,7 +1140,7 @@ export default function Userdetails() {
               <div className="dialog-user">
                 <img
                   src={userInfo.avatar}
-                  alt={`Profile picture of ${userInfo.name} ${userInfo.surname}`}
+                  alt={`Profile of ${userInfo.name} ${userInfo.surname}`}
                   className="dialog-avatar"
                 />
                 <div className="dialog-actions">
