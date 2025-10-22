@@ -6,6 +6,7 @@ import User from '../../components/icons/User';
 import EmptyTableIcon from '../../components/icons/EmptyTableIcon';
 import Createusermodal from './Createusermodal';
 import Errormodal from '../../components/shared/Errormodal';
+import { useNavigate } from 'react-router-dom';
 
 // Icon components
 const Search = ({ className }) => (
@@ -408,6 +409,9 @@ const Users = () => {
   const [isErrorModalOpen, setIsErrorModalOpen] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
   const [selectedUsers, setSelectedUsers] = useState([]);
+  
+
+const navigate = useNavigate();
 
   const users = [
     {
@@ -504,18 +508,22 @@ const Users = () => {
 
   const columns = [
     {
-      header: 'Name',
-      accessor: 'name',
-      sortable: true,
-      render: (row) => (
-        <div className="user-name">
-          <div className="user-avatar">
-            <User />
-          </div>
-          <span>{row.name}</span>
-        </div>
-      )
-    },
+  header: 'Name',
+  accessor: 'name',
+  sortable: true,
+  render: (row) => (
+    <div 
+      className="user-name cursor-pointer" 
+      onClick={() => navigate(`/users/${row.id}`)}
+      style={{ cursor: 'pointer', color: '#2563eb' }} // optional blue clickable text
+    >
+      <div className="user-avatar">
+        <User />
+      </div>
+      <span>{row.name}</span>
+    </div>
+  )
+},
     { 
       header: 'Email', 
       accessor: 'email',

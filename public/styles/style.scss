@@ -37,6 +37,7 @@
 @import "variables";
 @import "mixin";
 @import "header";
+@import "_modal";
 @import "_commonpageheader";
 @import "loader";
 @import "layout";
@@ -47,6 +48,7 @@
 @import "notificationsview";
 @import "profileview";
 @import "users";
+
 
 * {
   margin: 0;
@@ -96,6 +98,37 @@ body {
   border-radius: $size-radius-compact;
   cursor: pointer;
   color: #fff;
+}
+
+.common_header_back_btn{
+  background: transparent;
+  border-radius: $size-radius-compact;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  @include flexProperty(flex, center, center);
+
+  svg{
+    width: 16px;
+    margin-right: 5px;
+    path{
+      stroke: $fill-element-subdued;
+    }
+  }
+
+  span{
+    color: $fill-element-subdued;
+  font-family: $font-family-support;
+  font-size: $size-text-body-large;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px; /* 137.5% */
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-skip-ink: auto;
+  text-decoration-thickness: auto;
+  text-underline-offset: auto;
+  }
 }
 
 // Company Overview CSS
