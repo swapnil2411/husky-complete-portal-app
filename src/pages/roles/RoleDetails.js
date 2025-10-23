@@ -3,11 +3,13 @@ import React from "react";
 import Commonheader from "../../components/shared/Commonheader";
 import Button from "../../components/shared/Button";
 import Leftangle from "../../components/icons/Leftangle";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams, useLocation } from "react-router-dom";
 import Search from "../../components/icons/Search";
 import DownAngle from "../../components/icons/DownAngle";
 
 const RoleDetails = () => {
+    const { roleName } = useParams();
+    const location = useLocation();
     const navigate = useNavigate();
     // Get role from navigation state or from localStorage
   const role =
