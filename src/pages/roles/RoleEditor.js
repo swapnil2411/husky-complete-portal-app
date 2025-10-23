@@ -4,7 +4,6 @@ import {
   AccordionSummary,
   Checkbox,
   FormControlLabel,
-  Link,
 } from "@mui/material";
 import React, { useState } from "react";
 import { useLocation, useParams, useNavigate } from "react-router-dom";

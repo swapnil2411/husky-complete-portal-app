@@ -1,6 +1,5 @@
 import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
 import React from "react";
-import { Link, useLocation, useParams } from "react-router-dom";
 import Commonheader from "../../components/shared/Commonheader";
 import Button from "../../components/shared/Button";
 import Leftangle from "../../components/icons/Leftangle";

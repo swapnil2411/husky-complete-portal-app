@@ -7,10 +7,6 @@ import Plus from "../../components/icons/Plus"
 import Tick from "../../components/icons/Tick";
 import Close from "../../components/icons/Close";
 
-const primaryColor = "#1976D2";
-const grayColor = "#646668";
-const darkColor = "#212427";
-
 const Roles = () => {
   const navigate = useNavigate();
 
@@ -106,7 +102,6 @@ const Roles = () => {
         <Button
           onClick={handleSave}
           variant="solid_btn"
-          style={{ backgroundColor: primaryColor }}
         >
           <span className="icon"><Tick /></span>
           <span className="txt">Save</span>
