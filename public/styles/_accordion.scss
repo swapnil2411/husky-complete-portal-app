@@ -1,0 +1,169 @@
+
+.MuiAccordion-rounded{
+    border-radius: $size-radius-default !important;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.10) !important;
+    background-color: transparent !important;
+    margin-bottom: 0 !important;
+    margin-top: 0 !important;
+    width: 100%;
+
+    &::before{
+        display: none;
+    }
+
+    .MuiAccordion-heading {
+    button {
+        @include flexProperty(flex, flex-start, center);
+        padding: $spacing-padding-component-l;
+        gap: $spacing-gap-component-m;
+        align-self: stretch;
+        border-radius: $size-radius-default $size-radius-default 0 0;
+        background: $fill-action-tertiary-muted-pressed;
+        position: relative;
+
+        /* Elevation/1 */
+        // box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.10);
+        min-height: unset;
+
+        .MuiAccordionSummary-content {
+            margin: 0;
+            color: $fill-element-default;
+            font-family: $font-family-support;
+            font-size: $size-text-headline-medium;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+
+            @media (max-width: $tablet){
+                font-size: 24px;
+            }
+
+            @media (max-width: $mobile){
+                font-size: 22px;
+            }
+
+            .accordion_angle{
+                 @include flexProperty(flex, center, center);
+                width: $size-action-default;
+                height: $size-action-default;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                right: $spacing-padding-component-l;
+
+svg{
+    width: 16px;
+    height: 16px;
+
+    path{
+        fill: $fill-element-onTertiary-muted-default;
+    }
+}
+            }
+        }
+    }
+
+}
+
+&.Mui-expanded{
+     .MuiAccordion-heading {
+    button {
+
+        .MuiAccordionSummary-content {
+
+            .accordion_angle{
+                transform: translateY(-50%) rotate(180deg);
+            }
+        }
+    }
+}
+}
+
+.MuiAccordion-region{
+   @include flexProperty(flex, flex-start, flex-start);
+padding: $spacing-padding-layout-s;
+flex-direction: column;
+gap: $spacing-gap-component-m;
+align-self: stretch;
+
+.all_permission_ribbon{
+    label{
+        @include flexProperty(flex, flex-start, flex-start);
+        padding: $spacing-padding-component-m $spacing-padding-component-xs;
+        gap: $spacing-gap-component-s;
+        align-self: stretch;
+        margin-left: 0;
+        margin-right: 0;
+        background: $fill-surface-pressed;
+
+        .MuiCheckbox-root {
+            padding: 0;
+        }
+    }
+}
+
+.permissions_container {
+    margin-top: 16px;
+    .MuiFormControlLabel-root{
+        @include flexProperty(flex, flex-start, flex-start);
+        padding: $spacing-padding-component-m $spacing-padding-component-xs;
+        gap: $spacing-gap-component-s;
+        align-self: stretch;
+        margin-left: 0;
+        margin-right: 0;
+        .MuiCheckbox-root{
+            padding: 0;
+        }
+    }
+  &.vertical_list {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-gap-component-m;
+  }
+
+  &.vertical_grid {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(4, auto);
+    gap: $spacing-gap-component-m 24px;
+
+    @media (max-width: 767px) {
+      grid-auto-flow: row;
+      grid-template-columns: 1fr;
+      grid-template-rows: none;
+    }
+
+    @media (min-width: 768px) and (max-width: 1023px) {
+      grid-template-rows: repeat(2, auto);
+    }
+
+    @media (min-width: 1024px) {
+      grid-template-rows: repeat(4, auto);
+    }
+  }
+}
+
+
+.MuiAccordionDetails-root{
+    padding: 0;
+    width: 100%;
+    ul{
+        @include flexProperty(flex, flex-start, flex-start);
+    flex-direction: column;
+    gap: $spacing-gap-component-m;
+    flex: 1 0 0;
+    width: 100%;
+
+    @media (max-width: $tablet){
+                    gap: $spacing-gap-component-s;
+                }
+    li{
+        @include flexProperty(flex, flex-start, center);
+        padding: $spacing-padding-component-m $spacing-padding-component-xs;
+        gap: $spacing-gap-component-s;
+        align-self: stretch;
+    }
+    }
+}
+}
+}

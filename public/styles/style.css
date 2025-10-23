@@ -3600,6 +3600,11 @@ aside .side_navigation_top nav ul li a .nav_txt, aside .side_navigation_bottom n
   font-weight: 300;
   line-height: normal;
 }
+@media (max-width: 991px) {
+  .dialog-overlay .dialog .dialog-header .dialog-title {
+    font-size: 28px;
+  }
+}
 .dialog-overlay .dialog .dialog-header .dialog-close {
   display: flex;
   justify-content: center;
@@ -4036,6 +4041,446 @@ aside .side_navigation_top nav ul li a .nav_txt, aside .side_navigation_bottom n
   width: 100%;
 }
 
+.roles_content {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 42px;
+  flex: 1 0 0;
+  align-self: stretch;
+}
+.roles_content .dialog-overlay .dialog .dialog-content .form {
+  width: 100%;
+}
+.roles_content .dialog-overlay .dialog .dialog-content .form input {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 48px;
+  min-height: 48px;
+  padding: 1px 8px 1px 16px;
+  gap: 8px;
+  flex: 1 0 0;
+  border-radius: 4px;
+  border: 1px solid #1F50B4;
+  background: #fff;
+  outline: none;
+  color: #212427;
+  font-family: "Roboto";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.36px;
+  width: 100%;
+}
+.roles_content .dialog-overlay .dialog .dialog-content .form input::-moz-placeholder {
+  color: #7B7E84;
+}
+.roles_content .dialog-overlay .dialog .dialog-content .form input::placeholder {
+  color: #7B7E84;
+}
+
+.switch_action {
+  margin-right: unset !important;
+  margin-left: unset !important;
+  gap: 8px;
+}
+.switch_action .MuiSwitch-root {
+  padding: 0;
+  height: unset;
+  width: unset;
+}
+.switch_action .MuiSwitch-switchBase {
+  padding: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.switch_action .MuiSwitch-switchBase.Mui-checked {
+  transform: translate(20px, -50%) !important;
+}
+.switch_action .MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track {
+  background: #1F50B4;
+  opacity: 1;
+}
+.switch_action .MuiSwitch-switchBase .MuiSwitch-thumb {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 16px;
+  height: 16px;
+  flex-direction: column;
+  flex-shrink: 0;
+  background: #fff;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2);
+}
+.switch_action .MuiSwitch-switchBase .MuiTouchRipple-root {
+  display: none;
+}
+.switch_action .MuiSwitch-track {
+  width: 36px;
+  height: 18px;
+  flex-shrink: 0;
+  border-radius: 18px;
+  background: #DFE5F0;
+  opacity: 1;
+}
+
+.roles_table_with_new_role {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 20px;
+}
+.roles_table_with_new_role .roles_wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+.roles_table_with_new_role .roles_wrapper .roles_list {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1);
+  border-collapse: collapse;
+}
+.roles_table_with_new_role .roles_wrapper .roles_list thead tr th {
+  height: 64px;
+  min-height: 64px;
+  padding: 16px;
+  background: #CBD0DA;
+  text-align: left;
+  color: #53565A;
+  font-family: "Roboto";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 22px;
+}
+.roles_table_with_new_role .roles_wrapper .roles_list thead tr th:first-child {
+  border-top-left-radius: 8px;
+}
+.roles_table_with_new_role .roles_wrapper .roles_list thead tr th:last-child {
+  border-top-right-radius: 8px;
+}
+.roles_table_with_new_role .roles_wrapper .roles_list thead tr th:nth-child(1),
+.roles_table_with_new_role .roles_wrapper .roles_list thead tr th :nth-child(3) {
+  width: 20%;
+  max-width: 20%;
+}
+.roles_table_with_new_role .roles_wrapper .roles_list thead tr th:nth-child(2) {
+  width: 60%;
+  max-width: 60%;
+}
+.roles_table_with_new_role .roles_wrapper .roles_list tbody tr td {
+  height: 64px;
+  min-height: 64px;
+  padding: 16px;
+  text-align: left;
+  color: #212427;
+  font-family: "Roboto";
+  font-size: 16px;
+  font-style: normal;
+  line-height: 22px;
+  /* 137.5% */
+  background: #FFFFFF;
+}
+.roles_table_with_new_role .roles_wrapper .roles_list tbody tr td .miniBox {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.roles_table_with_new_role .roles_wrapper .roles_list tbody tr td .miniBox span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px 8px;
+  align-items: center;
+  gap: 8px;
+  border-radius: 4px;
+  border: 1px solid #696225;
+  background: #FCED79;
+  color: #696225;
+  font-family: "Roboto";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px; /* 137.5% */
+}
+.roles_table_with_new_role .roles_wrapper .roles_list tbody tr td:nth-child(1), .roles_table_with_new_role .roles_wrapper .roles_list tbody tr td:nth-child(3) {
+  width: 20%;
+  max-width: 20%;
+}
+.roles_table_with_new_role .roles_wrapper .roles_list tbody tr td:nth-child(2) {
+  width: 60%;
+  max-width: 60%;
+}
+.roles_table_with_new_role .roles_wrapper .roles_list tbody tr:last-child td {
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+.roles_table_with_new_role .roles_wrapper .roles_list tbody tr:not(:last-child) td {
+  border-bottom: 1px solid #CBD0DA;
+}
+.roles_table_with_new_role .borderless_btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 36px;
+  min-width: 64px;
+  padding: 8px 8px;
+  gap: 8px;
+}
+.roles_table_with_new_role .borderless_btn .icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+}
+.roles_table_with_new_role .borderless_btn .icon svg path {
+  fill: #212427;
+}
+.roles_table_with_new_role .borderless_btn .txt {
+  color: #212427;
+  font-family: "Roboto";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.32px;
+  text-transform: uppercase;
+}
+
+.role_details_wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 42px;
+  flex: 1 0 0;
+  align-self: stretch;
+}
+.role_details_wrapper .common_page_header_title_with_element .role_editor_actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.role_details_wrapper .common_page_header_title_with_element .role_editor_actions .border_btn, .role_details_wrapper .common_page_header_title_with_element .role_editor_actions .solid_btn {
+  height: 36px;
+  min-width: 64px;
+}
+.role_details_wrapper .common_page_header_title_with_element .role_details_search {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  align-self: stretch;
+  border-radius: 4px;
+  border: 1px solid #1F50B4;
+  background: #F5F7FA;
+  display: flex;
+  height: 36px;
+  min-height: 32px;
+  align-items: center;
+  gap: 8px;
+}
+.role_details_wrapper .common_page_header_title_with_element .role_details_search .serach_wrapper {
+  height: 100%;
+  position: relative;
+}
+.role_details_wrapper .common_page_header_title_with_element .role_details_search .serach_wrapper input {
+  width: 100%;
+  height: 100%;
+  padding: 1px 32px 1px 16px;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  border-radius: 4px;
+}
+.role_details_wrapper .common_page_header_title_with_element .role_details_search .serach_wrapper .search_icon {
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+}
+.role_details_wrapper .role_services_overview {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 24px;
+  align-self: stretch;
+}
+
+.MuiAccordion-rounded {
+  border-radius: 8px !important;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1) !important;
+  background-color: transparent !important;
+  margin-bottom: 0 !important;
+  margin-top: 0 !important;
+  width: 100%;
+}
+.MuiAccordion-rounded::before {
+  display: none;
+}
+.MuiAccordion-rounded .MuiAccordion-heading button {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 24px;
+  gap: 16px;
+  align-self: stretch;
+  border-radius: 8px 8px 0 0;
+  background: #DFE5F0;
+  position: relative;
+  /* Elevation/1 */
+  min-height: unset;
+}
+.MuiAccordion-rounded .MuiAccordion-heading button .MuiAccordionSummary-content {
+  margin: 0;
+  color: #212427;
+  font-family: "Roboto";
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+@media (max-width: 991px) {
+  .MuiAccordion-rounded .MuiAccordion-heading button .MuiAccordionSummary-content {
+    font-size: 24px;
+  }
+}
+@media (max-width: 600px) {
+  .MuiAccordion-rounded .MuiAccordion-heading button .MuiAccordionSummary-content {
+    font-size: 22px;
+  }
+}
+.MuiAccordion-rounded .MuiAccordion-heading button .MuiAccordionSummary-content .accordion_angle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 24px;
+}
+.MuiAccordion-rounded .MuiAccordion-heading button .MuiAccordionSummary-content .accordion_angle svg {
+  width: 16px;
+  height: 16px;
+}
+.MuiAccordion-rounded .MuiAccordion-heading button .MuiAccordionSummary-content .accordion_angle svg path {
+  fill: #212427;
+}
+.MuiAccordion-rounded.Mui-expanded .MuiAccordion-heading button .MuiAccordionSummary-content .accordion_angle {
+  transform: translateY(-50%) rotate(180deg);
+}
+.MuiAccordion-rounded .MuiAccordion-region {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 24px;
+  flex-direction: column;
+  gap: 16px;
+  align-self: stretch;
+}
+.MuiAccordion-rounded .MuiAccordion-region .all_permission_ribbon label {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 16px 4px;
+  gap: 8px;
+  align-self: stretch;
+  margin-left: 0;
+  margin-right: 0;
+  background: #DFE5F0;
+}
+.MuiAccordion-rounded .MuiAccordion-region .all_permission_ribbon label .MuiCheckbox-root {
+  padding: 0;
+}
+.MuiAccordion-rounded .MuiAccordion-region .permissions_container {
+  margin-top: 16px;
+}
+.MuiAccordion-rounded .MuiAccordion-region .permissions_container .MuiFormControlLabel-root {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 16px 4px;
+  gap: 8px;
+  align-self: stretch;
+  margin-left: 0;
+  margin-right: 0;
+}
+.MuiAccordion-rounded .MuiAccordion-region .permissions_container .MuiFormControlLabel-root .MuiCheckbox-root {
+  padding: 0;
+}
+.MuiAccordion-rounded .MuiAccordion-region .permissions_container.vertical_list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.MuiAccordion-rounded .MuiAccordion-region .permissions_container.vertical_grid {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: repeat(4, auto);
+  gap: 16px 24px;
+}
+@media (max-width: 767px) {
+  .MuiAccordion-rounded .MuiAccordion-region .permissions_container.vertical_grid {
+    grid-auto-flow: row;
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .MuiAccordion-rounded .MuiAccordion-region .permissions_container.vertical_grid {
+    grid-template-rows: repeat(2, auto);
+  }
+}
+@media (min-width: 1024px) {
+  .MuiAccordion-rounded .MuiAccordion-region .permissions_container.vertical_grid {
+    grid-template-rows: repeat(4, auto);
+  }
+}
+.MuiAccordion-rounded .MuiAccordion-region .MuiAccordionDetails-root {
+  padding: 0;
+  width: 100%;
+}
+.MuiAccordion-rounded .MuiAccordion-region .MuiAccordionDetails-root ul {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1 0 0;
+  width: 100%;
+}
+@media (max-width: 991px) {
+  .MuiAccordion-rounded .MuiAccordion-region .MuiAccordionDetails-root ul {
+    gap: 8px;
+  }
+}
+.MuiAccordion-rounded .MuiAccordion-region .MuiAccordionDetails-root ul li {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 16px 4px;
+  gap: 8px;
+  align-self: stretch;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -4084,6 +4529,13 @@ body {
   border-radius: 4px;
   cursor: pointer;
   color: #fff;
+}
+
+.borderless_btn {
+  border: none;
+  background: transparent;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 .common_header_back_btn {

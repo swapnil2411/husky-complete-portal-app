@@ -48,7 +48,8 @@
 @import "notificationsview";
 @import "profileview";
 @import "users";
-
+@import "roles";
+@import "accordion";
 
 * {
   margin: 0;
@@ -98,6 +99,13 @@ body {
   border-radius: $size-radius-compact;
   cursor: pointer;
   color: #fff;
+}
+
+.borderless_btn{
+  border: none;
+  background: transparent;
+  border-radius: $size-radius-compact;
+  cursor: pointer;
 }
 
 .common_header_back_btn{

@@ -1,0 +1,317 @@
+.roles_content {
+    @include flexProperty(flex, flex-start, flex-start);
+    flex-direction: column;
+    gap: $spacing-gap-layout-xl;
+    flex: 1 0 0;
+    align-self: stretch;
+
+    .dialog-overlay{
+    .dialog{
+        .dialog-content{
+            .form{
+                width: 100%;
+
+                input{
+                    @include flexProperty(flex, flex-start, center);
+              height: $size-action-emphasis;
+              min-height: 48px;
+              padding: 1px $spacing-padding-component-s 1px $spacing-padding-component-m;
+              gap: $spacing-gap-component-s;
+              flex: 1 0 0;
+              border-radius: $size-radius-compact;
+              border:1px solid $border-surface-highlight-default;
+              background:$fill-surface-default;
+              outline: none;
+              color: $fill-element-default;
+              font-family: $font-family-support;
+              font-size: $size-text-label-emphasis;
+              font-style: normal;
+              font-weight: 400;
+              line-height: normal;
+              letter-spacing: 0.36px;
+              width: 100%;
+
+              &::placeholder{
+                color: $fill-element-muted;
+              }
+                }
+            }
+        }
+    }
+}
+    
+}
+
+.switch_action {
+    margin-right: unset !important;
+    margin-left: unset !important;
+    gap: $spacing-gap-component-s;
+
+    .MuiSwitch-root {
+        padding: 0;
+        // display: unset;
+        height: unset;
+        width: unset;
+    }
+
+    .MuiSwitch-switchBase {
+        padding: 0;
+        top: 50%;
+        transform: translateY(-50%);
+
+        &.Mui-checked {
+            transform: translate(20px, -50%) !important;
+
+            &+.MuiSwitch-track {
+                background: $fill-element-onSecondary-default;
+                opacity: 1;
+            }
+        }
+
+        .MuiSwitch-thumb {
+            @include flexProperty(flex, center, center);
+            width: $size-surface-small;
+            height: $size-surface-small;
+            flex-direction: column;
+            flex-shrink: 0;
+            background: $fill-surface-default;
+            box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.20);
+        }
+
+        .MuiTouchRipple-root {
+            display: none;
+        }
+    }
+
+
+
+    .MuiSwitch-track {
+        width: $size-action-default;
+        height: $size-surface-compact;
+        flex-shrink: 0;
+        border-radius: 18px;
+        background: $fill-action-tertiary-muted-pressed;
+        opacity: 1;
+    }
+}
+
+.roles_table_with_new_role{
+    @include flexProperty(flex, flex-start, flex-start);
+    flex-direction: column;
+    gap: $spacing-gap-layout-s;
+
+    .roles_wrapper {
+    width: 100%;
+        overflow-x: auto;
+    .roles_list {
+        width: 100%;
+        border-radius: $size-radius-default;
+        box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.10);
+        border-collapse: collapse;
+
+        thead {
+            tr {
+                th {
+                    height: 64px;
+                    min-height: 64px;
+                    padding: $spacing-padding-component-m;
+                    background: $fill-surface-table-header;
+                    text-align: left;
+                    color: $fill-element-tableHeader;
+                    font-family: $font-family-support;
+                    font-size: $size-text-body-large;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: 22px;
+
+                    &:first-child {
+                        border-top-left-radius: $size-radius-default;
+                    }
+
+                    &:last-child {
+                        border-top-right-radius: $size-radius-default;
+                    }
+
+                    &:nth-child(1),
+                    :nth-child(3) {
+                        width: 20%;
+                        max-width: 20%;
+                    }
+
+                    &:nth-child(2) {
+                        width: 60%;
+                        max-width: 60%;
+                    }
+                }
+            }
+        }
+
+        tbody {
+
+            tr {
+                td {
+                    height: 64px;
+                    min-height: 64px;
+                    padding: $spacing-padding-component-m;
+                    text-align: left;
+                    color: $fill-element-default;
+                    font-family: $font-family-support;
+                    font-size: $size-text-body-large;
+                    font-style: normal;
+                    // font-weight: 600;
+                    line-height: 22px;
+                    /* 137.5% */
+                    background: #FFFFFF;
+
+                    .miniBox{
+                        @include flexProperty(flex, flex-start, center);
+                        flex-wrap: wrap;
+                        gap: $spacing-gap-component-s;
+                        span{
+                             @include flexProperty(flex, center, center);
+                                padding: $spacing-padding-component-minimal $spacing-padding-component-compact;
+                                align-items: center;
+                                gap: $spacing-gap-component-compact;
+                                border-radius: 4px;
+border: 1px solid #696225;
+background:  #FCED79;
+color: #696225;
+font-family: $font-family-support;
+font-size: $size-text-body-large;
+font-style: normal;
+font-weight: 400;
+line-height: 22px; /* 137.5% */
+                        }
+                    }
+
+                    &:nth-child(1),&:nth-child(3) {
+                        width: 20%;
+                        max-width: 20%;
+                    }
+
+                    &:nth-child(2) {
+                        width: 60%;
+                        max-width: 60%;
+                    }
+                }
+
+                &:last-child td {
+                    border-bottom-left-radius: $size-radius-default;
+                    border-bottom-right-radius: $size-radius-default;
+                }
+
+                &:not(:last-child) {
+                    td {
+                        border-bottom: 1px solid $border-surface-default;
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+.borderless_btn{
+    @include flexProperty(flex, center, center);
+    height:$size-action-default;
+    min-width: 64px;
+    padding: $spacing-padding-component-compact $spacing-padding-component-s;
+    gap: $spacing-gap-component-compact;
+
+    .icon{
+         @include flexProperty(flex, center, center);
+        width: $size-element-default;
+        height: $size-element-default;
+
+        svg{
+            path{
+                fill: $fill-element-onTertiary-muted-default;
+            }
+        }
+    }
+
+    .txt{
+        color: $fill-element-onTertiary-muted-default;
+        font-family: $font-family-support;
+        font-size: $size-text-body-large;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        letter-spacing: 0.32px;
+        text-transform: uppercase;
+    }
+}
+
+
+}
+
+.role_details_wrapper{
+    width: 100%;
+    @include flexProperty(flex, flex-start, flex-start);
+    flex-direction: column;
+gap: $spacing-gap-layout-xl;
+flex: 1 0 0;
+align-self: stretch;
+
+    .common_page_header_title_with_element{
+
+        .role_editor_actions{
+            @include flexProperty(flex, center, center);
+            gap: $spacing-gap-layout-m;
+            flex-wrap: wrap;
+
+            .border_btn, .solid_btn{
+                height: $size-action-default;
+min-width: 64px;
+            }
+        }
+        .role_details_search{
+            @include flexProperty(flex, center, flex-start);
+            align-self: stretch;
+            border-radius:$size-radius-compact;
+            border: 1px solid $border-surface-highlight-default;
+            background: $fill-surface-subdued;
+            display: flex;
+            height: $size-action-default;
+            min-height: 32px;
+            // padding: 1px $spacing-padding-component-s 1px $spacing-padding-component-m;
+            align-items: center;
+            gap: $spacing-gap-component-s;
+
+            .serach_wrapper{
+                height: 100%;
+                position: relative;
+                input{
+                width: 100%;
+                height: 100%;
+                padding: 1px $spacing-padding-component-xl 1px $spacing-padding-component-m;
+                border: none;
+                outline: none;
+                box-shadow: none;
+                 border-radius:$size-radius-compact;
+            }
+
+            .search_icon{
+                position: absolute;
+                top: 50%;
+                right: 5px;
+                transform: translateY(-50%);
+                @include flexProperty(flex, center, center);
+                width: $size-element-default;
+                height: $size-element-default;
+            }
+            }
+
+            
+        }
+    }
+
+    .role_services_overview{
+        width: 100%;
+        @include flexProperty(flex, flex-start, flex-start);
+        flex-direction: column;
+        gap: $spacing-gap-layout-m;
+        align-self: stretch;
+    }
+}
+
