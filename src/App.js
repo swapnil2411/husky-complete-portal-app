@@ -7,6 +7,7 @@ import Roles from './pages/roles/Roles';
 import Support from "./components/icons/Support";
 import RoleEditor from "./pages/roles/RoleEditor";
 import RoleDetails from "./pages/roles/RoleDetails";
+import Administrators from "./pages/administration/Administrators";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/role/:roleName" element={<RoleDetails />} />
           <Route path="/role-editor" element={<RoleEditor />} />
           <Route path="/support" element={<Support />} />
+          <Route path="/administrator" element={<Administrators/>} />
         </Route>
       </Routes>
     </BrowserRouter>
