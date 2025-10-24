@@ -6,12 +6,14 @@ import Lock from '../icons/Lock'
 import Support from '../icons/Support'
 import Button from './Button'
 import Rightangle from '../icons/Rightangle'
+import Administrator from '../icons/Administrator'
 
 const Sidebar = () => {
   const navLink = [
      { id: 1, title: "Company Overview", path: "/", icon: <Company /> },
     { id: 2, title: "Users", path: "/users", icon: <Human /> },
     { id: 3, title: "Roles", path: "/roles", icon: <Lock /> },
+    {id: 4, title: "Administrator", path: "/administrator", icon: <Administrator />},
     { id: 4, title: "Support", path: "/support", icon: <Support /> }
   ]
 
@@ -43,8 +45,8 @@ const Sidebar = () => {
   //   {id: 4, title: "company", component: <Job />}
   // ];
 
-  const topLinks = navLink.slice(0, 3);
-  const bottomLinks = navLink.slice(3);
+  const topLinks = navLink.slice(0, 4);
+  const bottomLinks = navLink.slice(4);
 
   return (
     <aside className={`sidebar 

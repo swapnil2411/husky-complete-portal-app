@@ -157,6 +157,11 @@
                 }
             }
 
+            &.empty_card{
+                background: transparent;
+                box-shadow: none;
+                border: 1px dashed #1F50B4;
+            }
 
         }
 

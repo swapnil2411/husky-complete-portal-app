@@ -18,7 +18,7 @@ const Administrators = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [modalType, setModalType] = useState(""); // "super" or "admin"
   const [selectedUser, setSelectedUser] = useState("");
-//   const [search, setSearch] = useState("");
+  const [search, setSearch] = useState("");
   const [selectedAdmins, setSelectedAdmins] = useState([]);
 
   // === Initialize default data ===
@@ -109,9 +109,9 @@ const Administrators = () => {
 
   // === Search filter ===
   const filteredAdmins = admins.filter(
-    // (a) =>
-    //   a.name.toLowerCase().includes(search.toLowerCase()) ||
-    //   a.email.toLowerCase().includes(search.toLowerCase())
+    (a) =>
+      a.name.toLowerCase().includes(search.toLowerCase()) ||
+      a.email.toLowerCase().includes(search.toLowerCase())
   );
 
   const dummyUsers = [
@@ -163,9 +163,14 @@ const Administrators = () => {
               <span className="icon">
                 <Pencil />
               </span>
-              <span className="icon"  onClick={() => handleDeleteSuperAdmin(admin.id)}>
-                <Delete />
-              </span>
+              {admin.id !== superAdmins[0].id && (
+        <span
+          className="icon"
+          onClick={() => handleDeleteSuperAdmin(admin.id)}
+        >
+          <Delete />
+        </span>
+      )}
             </div>
           </div>
         ))}
@@ -201,12 +206,13 @@ const Administrators = () => {
           <h3>Administrators</h3>
 
           <div className="table-controls">
-            {/* <input
+            <input
+            style={{display: 'none'}}
               type="text"
               placeholder="Search"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-            /> */}
+            />
             <Button
             variant="solid_btn"
               onClick={() => {
