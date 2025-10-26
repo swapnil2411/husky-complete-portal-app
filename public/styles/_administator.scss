@@ -78,9 +78,9 @@
             /* Elevation/1 */
             box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.10);
 
-            @media (max-width: $laptop){
+            @media (max-width: $laptop) {
                 flex: 0 0 100%;
-            max-width: 100%;
+                max-width: 100%;
             }
 
             .avatar {
@@ -127,11 +127,11 @@
                     font-weight: 400;
                     line-height: normal;
 
-                    @media (max-width: $tablet){
+                    @media (max-width: $tablet) {
                         font-size: 24px;
                     }
 
-                    @media (max-width: $mobile){
+                    @media (max-width: $mobile) {
                         font-size: 22px;
                     }
                 }
@@ -157,7 +157,7 @@
                 }
             }
 
-            &.empty_card{
+            &.empty_card {
                 background: transparent;
                 box-shadow: none;
                 border: 1px dashed #1F50B4;
@@ -174,9 +174,9 @@
 
             .icon {
                 @include flexProperty(flex, center, center);
-width: $size-action-default;
-height: $size-action-default;
-cursor: pointer;
+                width: $size-action-default;
+                height: $size-action-default;
+                cursor: pointer;
 
                 &:hover {
                     color: #000;
@@ -208,11 +208,11 @@ cursor: pointer;
                     font-weight: 300;
                     line-height: normal;
 
-                    @media (max-width: $tablet){
+                    @media (max-width: $tablet) {
                         font-size: 24px;
                     }
 
-                    @media (max-width: $mobile){
+                    @media (max-width: $mobile) {
                         font-size: 22px;
                     }
                 }
@@ -253,17 +253,17 @@ cursor: pointer;
                 }
             }
 
-            
+
         }
     }
 
     .admin-table {
         width: 100%;
-@include flexProperty(flex, flex-start, flex-start);
-flex-direction: column;
-gap: $spacing-gap-layout-m;
-align-self: stretch;
-        
+        @include flexProperty(flex, flex-start, flex-start);
+        flex-direction: column;
+        gap: $spacing-gap-layout-m;
+        align-self: stretch;
+
 
         .table-header {
             @include flexProperty(flex, space-between, center);
@@ -272,240 +272,246 @@ align-self: stretch;
             h3 {
                 color: $fill-element-default;
 
-/* headings/headline2 */
-font-family: $font-family-support;
-font-size: $size-text-headline-medium;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
-
-@media (max-width: $tablet){
-                        font-size: 24px;
-                    }
-
-                    @media (max-width: $mobile){
-                        font-size: 22px;
-                    }
-            }
-.solid_btn {
-            @include flexProperty(flex, center, center);
-            margin-left: auto;
-            height: $size-action-default;
-            min-width: 64px;
-            padding: $spacing-padding-component-s $spacing-padding-component-l;
-            gap: $spacing-gap-component-s;
-
-            .icon {
-                @include flexProperty(flex, center, center);
-                width: $size-element-default;
-                height: $size-element-default;
-
-                svg {
-                    path {
-                        fill: $fill-element-onPrimary-default;
-                    }
-                }
-            }
-
-            .txt {
-                color: $fill-element-onPrimary-default;
+                /* headings/headline2 */
                 font-family: $font-family-support;
-                font-size: $size-text-body-large;
+                font-size: $size-text-headline-medium;
                 font-style: normal;
-                font-weight: 500;
+                font-weight: 400;
                 line-height: normal;
-                letter-spacing: 0.32px;
-                text-transform: uppercase;
 
                 @media (max-width: $tablet) {
-                    font-size: $size-text-label-medium;
+                    font-size: 24px;
+                }
+
+                @media (max-width: $mobile) {
+                    font-size: 22px;
                 }
             }
-        }
-            
+
+            .solid_btn {
+                @include flexProperty(flex, center, center);
+                margin-left: auto;
+                height: $size-action-default;
+                min-width: 64px;
+                padding: $spacing-padding-component-s $spacing-padding-component-l;
+                gap: $spacing-gap-component-s;
+
+                .icon {
+                    @include flexProperty(flex, center, center);
+                    width: $size-element-default;
+                    height: $size-element-default;
+
+                    svg {
+                        path {
+                            fill: $fill-element-onPrimary-default;
+                        }
+                    }
+                }
+
+                .txt {
+                    color: $fill-element-onPrimary-default;
+                    font-family: $font-family-support;
+                    font-size: $size-text-body-large;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: normal;
+                    letter-spacing: 0.32px;
+                    text-transform: uppercase;
+
+                    @media (max-width: $tablet) {
+                        font-size: $size-text-label-medium;
+                    }
+                }
+            }
+
         }
 
         .admin_list_table {
-  width: 100%;
-  overflow-x: auto;
-  table {
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 0;
-    border-radius: $size-radius-default;
-
-    thead {
-      tr {
-        // ❌ remove display: flex
-        // display: flex;
-        width: 100%;
-      }
-    }
-
-    th {
-      height: 68px;
-      min-height: 64px;
-      padding: $spacing-padding-component-m;
-      background: $fill-surface-table-header;
-      text-align: left;
-      font-weight: 600;
-      color: $fill-element-tableHeader;
-
-/* paragraphs/body2 emphasis */
-font-family: $font-family-support;
-font-size: $size-text-body-large;
-font-style: normal;
-font-weight: 600;
-line-height: 22px; /* 137.5% */
-    }
-
-    td{
-        height: 68px;
-      min-height: 64px;
-      padding: $spacing-padding-component-m;
-      text-align: left;
-      font-weight: 600;
-      color: $fill-element-tableHeader;
-
-/* paragraphs/body2 emphasis */
-font-family: $font-family-support;
-font-size: $size-text-body-large;
-font-style: normal;
-font-weight: 600;
-line-height: 22px; /* 137.5% */
-
-.user_name{
-    @include flexProperty(flex, flex-start, center);
-    svg{
-        margin-right: 6px
-    }
-}
-    }
-
-.empty{
-    @include flexProperty(flex, center, center);
-flex-direction: column;
-gap: $spacing-gap-component-m;
-align-self: stretch;
-padding: 96px 0;
-background: $fill-element-onPrimary-default;
-border-radius: 0 0 $size-radius-default $size-radius-default;
-
-.txt{
-    color: $fill-element-default;
-text-align: center;
-font-family: $font-family-support;
-font-size: $size-text-title-medium;
-font-style: normal;
-font-weight: 400;
-line-height: 27px; /* 150% */
-
-                    @media (max-width: $mobile){
-                        font-size: 16px;
-                    }
-}
-
-.border_btn{
-         @include flexProperty(flex, center, center);
-height: $size-action-default;
-min-width: 64px;
-padding: $spacing-padding-component-s $spacing-padding-component-l;
-gap: $spacing-gap-component-s;
-
-.icon{
-  @include flexProperty(flex, center, center);
-    width: 24px;
-    height: 24px;
-
-    svg{
-      path{
-        fill: #1F50B4;
-      }
-    }
-}
-
-.txt{
-  color: $fill-element-onSecondary-default;
-                font-family: $font-family-support;
-                font-size: $size-text-body-large;
-                font-style: normal;
-                font-weight: 500;
-                line-height: normal;
-                letter-spacing: 0.32px;
-                text-transform: uppercase;
-
-                @media (max-width: $tablet){
-            font-size: $size-text-label-medium;
-        }
-}
-      }
-}
-
-tbody{
-    background: $fill-element-onPrimary-default;
-    border-radius: 0 0 $size-radius-default $size-radius-default;
-}
-
-    th,
-    td {
-      
-    }
-
-    th:nth-child(1){
-        text-align: center;
-        border-top-left-radius: $size-radius-default;
-    }
-
-    th:last-child{
-        border-top-right-radius: $size-radius-default;
-    }
-    th:nth-child(1),
-    td:nth-child(1){
-        width: 56px;
-  min-width: 56px;
-    }
-
-    .status.active {
-      background: #dcfce7;
-      color: #15803d;
-      padding: 3px 8px;
-      border-radius: 6px;
-      font-size: 12px;
-    }
-  }
-
-  .empty {
-    text-align: center;
-    padding: 30px;
-    color: #777;
-    font-size: 14px;
-  }
-}
-
-
-       
-    }
-
-    .dialog-content{
-        .form{
             width: 100%;
-            select{
+            overflow-x: auto;
+
+            table {
                 width: 100%;
-height: $size-action-emphasis;
-padding: 0 $spacing-gap-component-s 0 $spacing-gap-component-m;
-gap: $spacing-gap-component-s;
-flex: 1 0 0;
+                border-collapse: separate;
+                border-spacing: 0;
+                border-radius: $size-radius-default;
+
+                thead {
+                    tr {
+                        // ❌ remove display: flex
+                        // display: flex;
+                        width: 100%;
+                    }
+                }
+
+                th {
+                    height: 68px;
+                    min-height: 64px;
+                    padding: $spacing-padding-component-m;
+                    background: $fill-surface-table-header;
+                    text-align: left;
+                    font-weight: 600;
+                    color: $fill-element-tableHeader;
+
+                    /* paragraphs/body2 emphasis */
+                    font-family: $font-family-support;
+                    font-size: $size-text-body-large;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: 22px;
+                    /* 137.5% */
+                }
+
+                td {
+                    height: 68px;
+                    min-height: 64px;
+                    padding: $spacing-padding-component-m;
+                    text-align: left;
+                    font-weight: 600;
+                    color: $fill-element-tableHeader;
+
+                    /* paragraphs/body2 emphasis */
+                    font-family: $font-family-support;
+                    font-size: $size-text-body-large;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: 22px;
+                    /* 137.5% */
+
+                    .user_name {
+                        @include flexProperty(flex, flex-start, center);
+
+                        svg {
+                            margin-right: 6px
+                        }
+                    }
+                }
+
+                .empty {
+                    @include flexProperty(flex, center, center);
+                    flex-direction: column;
+                    gap: $spacing-gap-component-m;
+                    align-self: stretch;
+                    padding: 96px 0;
+                    background: $fill-element-onPrimary-default;
+                    border-radius: 0 0 $size-radius-default $size-radius-default;
+
+                    .txt {
+                        color: $fill-element-default;
+                        text-align: center;
+                        font-family: $font-family-support;
+                        font-size: $size-text-title-medium;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: 27px;
+                        /* 150% */
+
+                        @media (max-width: $mobile) {
+                            font-size: 16px;
+                        }
+                    }
+
+                    .border_btn {
+                        @include flexProperty(flex, center, center);
+                        height: $size-action-default;
+                        min-width: 64px;
+                        padding: $spacing-padding-component-s $spacing-padding-component-l;
+                        gap: $spacing-gap-component-s;
+
+                        .icon {
+                            @include flexProperty(flex, center, center);
+                            width: 24px;
+                            height: 24px;
+
+                            svg {
+                                path {
+                                    fill: #1F50B4;
+                                }
+                            }
+                        }
+
+                        .txt {
+                            color: $fill-element-onSecondary-default;
+                            font-family: $font-family-support;
+                            font-size: $size-text-body-large;
+                            font-style: normal;
+                            font-weight: 500;
+                            line-height: normal;
+                            letter-spacing: 0.32px;
+                            text-transform: uppercase;
+
+                            @media (max-width: $tablet) {
+                                font-size: $size-text-label-medium;
+                            }
+                        }
+                    }
+                }
+
+                tbody {
+                    background: $fill-element-onPrimary-default;
+                    border-radius: 0 0 $size-radius-default $size-radius-default;
+                }
+
+                th,
+                td {}
+
+                th:nth-child(1) {
+                    text-align: center;
+                    border-top-left-radius: $size-radius-default;
+                }
+
+                th:last-child {
+                    border-top-right-radius: $size-radius-default;
+                }
+
+                th:nth-child(1),
+                td:nth-child(1) {
+                    width: 56px;
+                    min-width: 56px;
+                }
+
+                .status.active {
+                    background: #dcfce7;
+                    color: #15803d;
+                    padding: 3px 8px;
+                    border-radius: 6px;
+                    font-size: 12px;
+                }
+            }
+
+            .empty {
+                text-align: center;
+                padding: 30px;
+                color: #777;
+                font-size: 14px;
+            }
+        }
+
+
+
+    }
+
+    .dialog-content {
+        .form {
+            width: 100%;
+
+            select {
+                width: 100%;
+                height: $size-action-emphasis;
+                padding: 0 $spacing-gap-component-s 0 $spacing-gap-component-m;
+                gap: $spacing-gap-component-s;
+                flex: 1 0 0;
             }
         }
     }
 
-    .dialog-close{
+    .dialog-close {
         @include flexProperty(flex, center, center);
         width: $size-element-default;
         height: $size-element-default;
         flex-shrink: 0;
 
-        svg{
+        svg {
             width: 16px;
             height: 16px;
         }

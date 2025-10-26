@@ -1,0 +1,757 @@
+.plants_groups_wrapper {
+    @include flexProperty(flex, flex-start, flex-start);
+    flex-direction: column;
+    gap: $spacing-gap-layout-xl;
+    flex: 1 0 0;
+    width: 100%;
+
+    .plants_table_container {
+        @include flexProperty(flex, flex-start, flex-start);
+        flex-direction: column;
+        gap: $spacing-gap-layout-m;
+        width: 100%;
+
+        .plants_header_with_search {
+            width: 100%;
+            @include flexProperty(flex, space-between, center);
+            align-self: stretch;
+
+            h2 {
+                color: $fill-element-default;
+                font-family: $font-family-support;
+                font-size: $size-text-headline-medium;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+
+                @media (max-width: $tablet) {
+                    font-size: 24px;
+                }
+
+                @media (max-width: $mobile) {
+                    font-size: 22px;
+                }
+            }
+
+            .plants_search_wrapper {
+                height: $size-action-default;
+                min-height: 32px;
+                align-items: center;
+                position: relative;
+                border-radius: $size-radius-compact;
+                border: 1px solid $border-surface-highlight-default;
+                background: $fill-surface-subdued;
+
+                input {
+                    padding: 1px $spacing-padding-component-l 1px $spacing-padding-component-m;
+                    height: 100%;
+                    width: 100%;
+                    outline: none;
+                    border: none;
+                    box-shadow: none;
+                    border-radius: $size-radius-compact;
+                }
+
+                .icon {
+                    @include flexProperty(flex, center, center);
+                    width: $size-element-default;
+                    height: $size-element-default;
+                    position: absolute;
+                    right: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+
+                    svg {}
+                }
+            }
+        }
+
+
+
+        .plants_table {
+            width: 100%;
+            overflow-x: auto;
+
+            table {
+                width: 100%;
+                border-collapse: separate;
+                border-spacing: 0;
+                border-radius: $size-radius-default;
+
+                thead {
+                    tr {
+                        // ❌ remove display: flex
+                        // display: flex;
+                        width: 100%;
+                    }
+                }
+
+                th {
+                    height: 68px;
+                    min-height: 64px;
+                    padding: $spacing-padding-component-m;
+                    background: $fill-surface-table-header;
+                    text-align: left;
+                    font-weight: 600;
+                    color: $fill-element-tableHeader;
+
+                    /* paragraphs/body2 emphasis */
+                    font-family: $font-family-support;
+                    font-size: $size-text-body-large;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: 22px;
+                    /* 137.5% */
+                }
+
+                td {
+                    height: 68px;
+                    min-height: 64px;
+                    padding: $spacing-padding-component-m;
+                    text-align: left;
+                    font-weight: 600;
+                    color: $fill-element-tableHeader;
+
+                    /* paragraphs/body2 emphasis */
+                    font-family: $font-family-support;
+                    font-size: $size-text-body-large;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: 22px;
+                    /* 137.5% */
+
+                    .user_name {
+                        @include flexProperty(flex, flex-start, center);
+
+                        svg {
+                            margin-right: 6px
+                        }
+                    }
+
+                    .miniBox {
+                        @include flexProperty(flex, flex-start, center);
+                        flex-wrap: wrap;
+                        gap: $spacing-gap-component-s;
+
+                        span {
+                            @include flexProperty(flex, center, center);
+                            padding: $spacing-padding-component-minimal $spacing-padding-component-compact;
+                            align-items: center;
+                            gap: $spacing-gap-component-compact;
+                            border-radius: 4px;
+                            border: 1px solid #696225;
+                            background: #FCED79;
+                            color: #696225;
+                            font-family: $font-family-support;
+                            font-size: $size-text-body-large;
+                            font-style: normal;
+                            font-weight: 400;
+                            line-height: 22px;
+                            /* 137.5% */
+                        }
+                    }
+                }
+
+
+
+                tbody {
+                    background: $fill-element-onPrimary-default;
+                    border-radius: 0 0 $size-radius-default $size-radius-default;
+
+                    tr {
+                        &:not(:last-child) {
+                            td {
+                                border-bottom: 1px solid #DFE5F0;
+                            }
+                        }
+                    }
+                }
+
+                th:last-child,
+                td:last-child {
+                    width: 56px;
+                    max-width: 56px;
+                    min-width: 56px;
+                }
+
+                th:nth-child(1) {
+                    border-top-left-radius: $size-radius-default;
+                }
+
+                th:last-child {
+                    border-top-right-radius: $size-radius-default;
+                }
+
+
+
+            }
+
+            .empty {
+                text-align: center;
+                padding: 30px;
+                color: #777;
+                font-size: 14px;
+            }
+        }
+    }
+
+    .groups_container {
+        width: 100%;
+        @include flexProperty(flex, flex-start, flex-start);
+        flex-direction: column;
+        gap: $spacing-gap-layout-xl;
+
+        .groups_box {
+            @include flexProperty(flex, flex-start, flex-start);
+            flex-direction: column;
+            gap: $spacing-gap-layout-m;
+            width: 100%;
+
+            .groups_heading_with_button {
+                @include flexProperty(flex, space-between, center);
+                align-self: stretch;
+
+                h2 {
+                    color: $fill-element-default;
+                    font-family: $font-family-support;
+                    font-size: $size-text-headline-medium;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+
+                    @media (max-width: $tablet) {
+                        font-size: 24px;
+                    }
+
+                    @media (max-width: $mobile) {
+                        font-size: 22px;
+                    }
+                }
+
+                .solid_btn {
+                    @include flexProperty(flex, center, center);
+                    margin-left: auto;
+                    height: $size-action-default;
+                    min-width: 64px;
+                    padding: $spacing-padding-component-s $spacing-padding-component-l;
+                    gap: $spacing-gap-component-s;
+
+                    .icon {
+                        @include flexProperty(flex, center, center);
+                        width: $size-element-default;
+                        height: $size-element-default;
+
+                        svg {
+                            path {
+                                fill: $fill-element-onPrimary-default;
+                            }
+                        }
+                    }
+
+                    .txt {
+                        color: $fill-element-onPrimary-default;
+                        font-family: $font-family-support;
+                        font-size: $size-text-body-large;
+                        font-style: normal;
+                        font-weight: 500;
+                        line-height: normal;
+                        letter-spacing: 0.32px;
+                        text-transform: uppercase;
+
+
+
+                        @media (max-width: $tablet) {
+                            font-size: $size-text-label-medium;
+                        }
+                    }
+                }
+            }
+
+            .groups_listing {
+                width: 100%;
+
+                .empty_group {
+                    @include flexProperty(flex, flex-start, center);
+                    padding: $spacing-padding-component-l;
+                    gap: $spacing-gap-component-xl;
+                    align-self: stretch;
+                    border-radius: 8px;
+                    // box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.10);
+                    border: 1px dashed $border-surface-default;
+                    color: $fill-element-muted;
+                    font-family: $font-family-support;
+                    font-size: $size-text-title-medium;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 27px;
+                    /* 150% */
+                }
+
+                .listed_acrrordion {
+                    .accordion_heading {
+                        color: $fill-element-default;
+
+                        /* headings/headline2 */
+                        font-family: $font-family-support;
+                        font-size: $size-text-headline-medium;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: normal;
+                    }
+
+                    .MuiAccordion-region {
+                        .MuiAccordionDetails-root {
+                            .plant_name {
+                                @include flexProperty(flex, flex-start, center);
+                                height: 52px;
+                                padding: $spacing-padding-component-s 0 $spacing-padding-component-s $spacing-padding-component-m;
+                                align-items: center;
+                                align-self: stretch;
+                                color: $fill-element-subdued;
+                                font-family: $font-family-support;
+                                font-size: $size-text-body-large;
+                                font-style: normal;
+                                font-weight: 400;
+                                line-height: 22px;
+
+                                &.plant_name_with_delete_icon {
+                                    @include flexProperty(flex, space-between, center);
+                                }
+                            }
+
+                            .add_plany_in_grp{
+                                &.borderless_btn {
+                            @include flexProperty(flex, center, center);
+                            gap: $spacing-gap-component-compact;
+                            height: $size-action-default;
+                            min-width: 64px;
+                            border-radius: $size-radius-compact;
+                            background: transparent;
+                            padding: $spacing-padding-component-s;
+
+                            .icon {
+                                @include flexProperty(flex, center, center);
+                                width: 24px;
+                                height: 24px;
+
+                                svg {
+                                    path {
+                                        fill: #1F50B4;
+                                    }
+                                }
+                            }
+
+                            .txt {
+                                color: $fill-element-onSecondary-default;
+                                font-family: $font-family-support;
+                                font-size: $size-text-body-medium;
+                                font-style: normal;
+                                font-weight: 500;
+                                line-height: normal;
+                                letter-spacing: 0.32px;
+                                text-transform: uppercase;
+
+                                @media (max-width: $tablet) {
+                                    font-size: $size-text-label-medium;
+                                }
+                            }
+                        }
+                            }
+
+
+                            .group_action_grp {
+                                @include flexProperty(flex, flex-end, center);
+                                padding: 0;
+                                gap: $spacing-gap-layout-s;
+                                align-self: stretch;
+
+                                .border_btn {
+                                    @include flexProperty(flex, center, center);
+                                    gap: $spacing-gap-component-compact;
+                                    height: $size-action-default;
+                                    min-width: 64px;
+                                    border-radius: $size-radius-compact;
+                                    background: transparent;
+                                    padding: $spacing-padding-component-s $spacing-padding-component-l;
+
+                                    .icon {
+                                        @include flexProperty(flex, center, center);
+                                        width: 24px;
+                                        height: 24px;
+
+                                        svg {
+                                            path {
+                                                fill: #1F50B4;
+                                            }
+                                        }
+                                    }
+
+                                    .txt {
+                                        color: $fill-element-onSecondary-default;
+                                        font-family: $font-family-support;
+                                        font-size: $size-text-body-large;
+                                        font-style: normal;
+                                        font-weight: 500;
+                                        line-height: normal;
+                                        letter-spacing: 0.32px;
+                                        text-transform: uppercase;
+
+                                        .group-text {
+                                            @media (max-width: $tablet) {
+                                                display: none;
+                                            }
+                                        }
+
+                                        @media (max-width: $tablet) {
+                                            font-size: $size-text-label-medium;
+                                        }
+                                    }
+                                }
+
+                                .solid_btn {
+                                        @include flexProperty(flex, center, center);
+                                        height: $size-action-default;
+                                        min-width: 64px;
+                                        padding: $spacing-padding-component-s $spacing-padding-component-l;
+                                        gap: $spacing-gap-component-s;
+
+                                        .icon {
+                                            @include flexProperty(flex, center, center);
+                                            width: $size-element-default;
+                                            height: $size-element-default;
+
+                                            svg {
+                                                path {
+                                                    fill: $fill-element-onPrimary-default;
+                                                }
+                                            }
+                                        }
+
+                                        .txt {
+                                            color: $fill-element-onPrimary-default;
+                                            font-family: $font-family-support;
+                                            font-size: $size-text-body-large;
+                                            font-style: normal;
+                                            font-weight: 500;
+                                            line-height: normal;
+                                            letter-spacing: 0.32px;
+                                            text-transform: uppercase;
+
+
+
+                                            @media (max-width: $tablet) {
+                                                font-size: $size-text-label-medium;
+                                            }
+                                        }
+                                    }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .suggested_group_box {
+            width: 100%;
+            @include flexProperty(flex, flex-start, flex-start);
+            flex-direction: column;
+            gap: $spacing-gap-layout-m;
+
+            .groups_heading_with_button {
+                @include flexProperty(flex, space-between, center);
+                align-self: stretch;
+
+                h2 {
+                    color: $fill-element-default;
+                    font-family: $font-family-support;
+                    font-size: $size-text-headline-medium;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+
+                    @media (max-width: $tablet) {
+                        font-size: 24px;
+                    }
+
+                    @media (max-width: $mobile) {
+                        font-size: 22px;
+                    }
+                }
+            }
+
+            .suggested_group_record {
+                border: 1px dashed $border-surface-default;
+                box-shadow: none !important;
+
+                button.MuiButtonBase-root {
+                    padding: unset;
+                    height: unset;
+                    padding: $spacing-padding-component-l;
+                    background: transparent;
+
+                    @media (max-width: $tablet) {
+                        padding: $spacing-padding-component-s $spacing-padding-component-m;
+                    }
+
+                    &.Mui-expanded {
+                        border-bottom: 1px dashed $border-surface-default;
+                    }
+
+                    .MuiAccordionSummary-content {
+                        @include flexProperty(flex, flex-start, center);
+                        gap: $spacing-gap-component-m;
+                        align-self: stretch;
+
+                        .accordion_title {
+                            color: $fill-element-subdued;
+                            font-family: $font-family-support;
+                            font-size: $size-text-headline-medium;
+                            font-style: normal;
+                            font-weight: 400;
+                            line-height: normal;
+                            overflow: hidden;
+                            display: -webkit-box;
+                            -webkit-line-clamp: 1;
+                            /* number of lines to show */
+                            line-clamp: 1;
+                            -webkit-box-orient: vertical;
+
+                            @media (max-width: $tablet) {
+                                font-size: 24px;
+                            }
+
+                            @media (max-width: $mobile) {
+                                font-size: 18px;
+                            }
+                        }
+
+                        .border_btn {
+                            @include flexProperty(flex, center, center);
+                            gap: $spacing-gap-component-compact;
+                            height: $size-action-default;
+                            min-width: 64px;
+                            border-radius: $size-radius-compact;
+                            background: transparent;
+                            padding: $spacing-padding-component-s $spacing-padding-component-l;
+
+                            .icon {
+                                @include flexProperty(flex, center, center);
+                                width: 24px;
+                                height: 24px;
+
+                                svg {
+                                    path {
+                                        fill: #1F50B4;
+                                    }
+                                }
+                            }
+
+                            .txt {
+                                color: $fill-element-onSecondary-default;
+                                font-family: $font-family-support;
+                                font-size: $size-text-body-large;
+                                font-style: normal;
+                                font-weight: 500;
+                                line-height: normal;
+                                letter-spacing: 0.32px;
+                                text-transform: uppercase;
+
+                                .group-text {
+                                    @media (max-width: $tablet) {
+                                        display: none;
+                                    }
+                                }
+
+                                @media (max-width: $tablet) {
+                                    font-size: $size-text-label-medium;
+                                }
+                            }
+                        }
+
+                        .borderless_btn {
+                            @include flexProperty(flex, center, center);
+                            gap: $spacing-gap-component-compact;
+                            height: $size-action-default;
+                            min-width: 64px;
+                            border-radius: $size-radius-compact;
+                            background: transparent;
+                            padding: $spacing-padding-component-s;
+
+                            .icon {
+                                @include flexProperty(flex, center, center);
+                                width: 24px;
+                                height: 24px;
+
+                                svg {
+                                    path {
+                                        fill: #1F50B4;
+                                    }
+                                }
+                            }
+
+                            .txt {
+                                color: $fill-element-onSecondary-default;
+                                font-family: $font-family-support;
+                                font-size: $size-text-body-large;
+                                font-style: normal;
+                                font-weight: 500;
+                                line-height: normal;
+                                letter-spacing: 0.32px;
+                                text-transform: uppercase;
+
+                                @media (max-width: $tablet) {
+                                    font-size: $size-text-label-medium;
+                                }
+                            }
+                        }
+                    }
+
+
+                }
+
+                .MuiAccordion-region {
+                    .MuiAccordionDetails-root {
+                        .plants_name {
+                            @include flexProperty(flex, flex-start, center);
+                            height: 52px;
+                            padding: $spacing-padding-component-s 0 $spacing-padding-component-s $spacing-padding-component-m;
+                            align-items: center;
+                            align-self: stretch;
+                            color: $fill-element-subdued;
+                            font-family: $font-family-support;
+                            font-size: $size-text-body-large;
+                            font-style: normal;
+                            font-weight: 400;
+                            line-height: 22px;
+                            /* 137.5% */
+                        }
+                    }
+                }
+            }
+        }
+
+        .dialog-overlay {
+            input {
+                @include flexProperty(flex, flex-start, center);
+                height: $size-action-emphasis;
+                min-height: 48px;
+                padding: 1px $spacing-padding-component-s 1px $spacing-padding-component-m;
+                gap: $spacing-gap-component-s;
+                flex: 1 0 0;
+                border-radius: $size-radius-compact;
+                border: 1px solid $border-surface-highlight-default;
+                background: $fill-surface-default;
+                outline: none;
+                color: $fill-element-muted;
+                font-family: $font-family-support;
+                font-size: $size-text-label-emphasis;
+                font-style: normal;
+                font-weight: 300;
+                line-height: normal;
+                letter-spacing: 0.36px;
+                width: 100%;
+
+                &::placeholder {
+                    color: $fill-element-muted;
+                }
+            }
+
+            .custom-select {
+                @include flexProperty(flex, flex-start, center);
+                height: $size-action-emphasis;
+                min-height: 48px;
+                padding: 1px $spacing-padding-component-s 1px $spacing-padding-component-m;
+                gap: $spacing-gap-component-s;
+                flex: 1 0 0;
+                border-radius: $size-radius-compact;
+                border: 1px solid $border-surface-highlight-default;
+                background: $fill-surface-default;
+                outline: none;
+                color: $fill-element-muted;
+                font-family: $font-family-support;
+                font-size: $size-text-label-emphasis;
+                font-style: normal;
+                font-weight: 300;
+                line-height: normal;
+                letter-spacing: 0.36px;
+                width: 100%;
+            }
+
+            .custom-dropdown {
+                width: 100%;
+                @include flexProperty(flex, flex-start, flex-start);
+                flex-direction: column;
+                align-self: stretch;
+                border-radius: $size-radius-compact;
+                border: 1px solid $border-surface-default;
+                background: $fill-surface-default;
+                box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.10);
+                max-height: 200px;
+                overflow-y: auto;
+
+                .dropdown-item {
+                    @include flexProperty(flex, space-between, center);
+                    height: $size-action-emphasis;
+                    min-height: 48px;
+                    padding: 0 $spacing-padding-component-m 0 $spacing-gap-component-m;
+                    align-items: center;
+                    align-self: stretch;
+                    cursor: pointer;
+
+                    svg{
+                        path{
+                            fill: $fill-element-default;
+                        }
+                    }
+
+                    input {
+                        width: 16px;
+                        height: 16px;
+                        min-height: unset;
+                        flex: unset;
+                    }
+                }
+            }
+
+            .chips_wrapper {
+                @include flexProperty(flex, flex-start, center);
+                align-content: flex-start;
+                gap: 8px;
+                align-self: stretch;
+                flex-wrap: wrap;
+            }
+
+            .chip {
+                display: flex;
+                padding: $spacing-padding-component-xs 12px;
+                align-items: center;
+                gap: $spacing-gap-component-xs;
+                border-radius: 20px;
+                border: 1px solid $border-action-secondary-default;
+
+                &_plant {
+                    color: $fill-element-onSecondary-default;
+                    font-family: $font-family-support;
+                    font-size: $size-text-body-large;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 22px;
+                    /* 137.5% */
+                }
+
+                .borderless_btn {
+                    @include flexProperty(flex, center, center);
+
+                    svg {
+                        width: 18px;
+                        height: 18px;
+
+                        path {
+                            fill: $fill-element-onSecondary-default;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
